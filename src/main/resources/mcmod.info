@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mm",
+  "name": "MCrafterzz Mod Reborn",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["HypherionMC"],
+  "credits": "MCrafterzz for creating the original mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
