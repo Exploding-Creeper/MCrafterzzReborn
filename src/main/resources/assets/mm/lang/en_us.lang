@@ -58,6 +58,7 @@ item.bronze_shovel.name=Bronze Shovel
 item.bronze_hoe.name=Bronze Hoe
 item.bronze_multitool.name=Bronze Multitool
 item.bronze_shears.name=Bronze Shears
+item.portable_furnace.name=Pocket Furnace
 
 // Shields
 item.stone_shield.name=Stone Shield
@@ -477,6 +478,7 @@ tile.dark_nether_bricks_stairs.name=Dark Nether Bricks Stairs
 // Contianers
 container.tile_entity_crusher.name=Crusher
 container.tile_entity_iron_chest.name=Iron Chest
+container.portable_furnace.name=Pocket Furnace
 
 // Creative tabs
 itemGroup.creativeTab=MCrafterzz Reborn

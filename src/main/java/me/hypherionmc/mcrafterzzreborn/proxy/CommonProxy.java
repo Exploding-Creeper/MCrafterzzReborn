@@ -9,9 +9,12 @@ import me.hypherionmc.mcrafterzzreborn.commands.CommandMCrafterzzMod;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandSetBlocks;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandTpDimension;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
+import me.hypherionmc.mcrafterzzreborn.eventhandlers.ServerTickHandler;
 import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
 import me.hypherionmc.mcrafterzzreborn.modelements.ModElementsSmallerBlocks;
 import me.hypherionmc.mcrafterzzreborn.modelements.ModElementsToolsArmour;
+import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
+import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import me.hypherionmc.mcrafterzzreborn.worldgen.ModFlowerGenerator;
 import me.hypherionmc.mcrafterzzreborn.worldgen.ModOreGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,7 +44,7 @@ public class CommonProxy {
         ModElements.crafting();
         ModElements.registerAchievements();
         ModElements.registerStats();
-        ModElements.registerGuiHandlers();
+
         ModElements.registerEventHandlers();
         ModElementsSmallerBlocks.crafting();
         ModElementsToolsArmour.crafting();
@@ -55,15 +58,21 @@ public class CommonProxy {
         GameRegistry.registerWorldGenerator(new ModOreGenerator(), 0);
         GameRegistry.registerWorldGenerator(new ModFlowerGenerator(), 100);
         //GameRegistry.registerTileEntity(TileEntityCrusher.class, "mm:tecrusher");
+        MinecraftForge.EVENT_BUS.register(new ServerTickHandler());
+
+        ModElements.registerGuiHandlers();
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-
+        new NetworkHandler();
     }
 
     public void serverStart(FMLServerStartingEvent event) {
         event.registerServerCommand(new CommandMCrafterzzMod());
         event.registerServerCommand(new CommandSetBlocks());
         event.registerServerCommand(new CommandTpDimension());
+
+        WorldSaveManager.resetAll();
+        WorldSaveManager.setINSTANCE(event.getServer().getEntityWorld());
     }
 }

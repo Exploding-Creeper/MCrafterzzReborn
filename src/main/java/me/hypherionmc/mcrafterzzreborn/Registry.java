@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn;
 
 import com.google.common.base.Strings;
+import me.hypherionmc.mcrafterzzreborn.util.IHasCustomRender;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -44,7 +45,11 @@ public class Registry {
     }
 
     public static void registerRenderItem(Item item) {
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("mm:" + item.getTranslationKey().substring(5), "inventory"));
+        if (item instanceof IHasCustomRender) {
+            ((IHasCustomRender)item).registerRenderers();
+        } else if (!(item instanceof IHasCustomRender)) {
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("mm:" + item.getTranslationKey().substring(5), "inventory"));
+        }
     }
 
     public static void registerRenderBlock(Block block) {

@@ -126,11 +126,13 @@ public class ModElementsToolsArmour {
     public static Item amethyst_chestplate;
     public static Item amethyst_leggings;
     public static Item amethyst_boots;
+    public static Item portable_furnace;
 
     public ModElementsToolsArmour() {
     }
 
     public static void createBlocksAndItems() {
+        portable_furnace = (new PortableFurnace()).setTranslationKey("portable_furnace");
         copper_sword = (new Sword(copperTool, ModElements.copper_ingot)).setTranslationKey("copper_sword").setCreativeTab(ModElements.creativeTabTools);
         bronze_sword = (new Sword(bronzeTool, ModElements.bronze_ingot)).setTranslationKey("bronze_sword").setCreativeTab(ModElements.creativeTabTools);
         jade_sword = (new Sword(jadeTool, ModElements.jade)).setTranslationKey("jade_sword").setCreativeTab(ModElements.creativeTabTools);
@@ -227,6 +229,8 @@ public class ModElementsToolsArmour {
     }
 
     public static void registerItemsAndBlocks() {
+
+        Registry.registerItem(portable_furnace, portable_furnace.getTranslationKey().substring(5));
         Registry.registerItem(copper_sword, copper_sword.getTranslationKey().substring(5));
         Registry.registerItem(bronze_sword, bronze_sword.getTranslationKey().substring(5));
         Registry.registerItem(jade_sword, jade_sword.getTranslationKey().substring(5));
@@ -323,6 +327,8 @@ public class ModElementsToolsArmour {
     }
 
     public static void registerRenders() {
+
+        Registry.registerRenderItem(portable_furnace);
         Registry.registerRenderItem(copper_sword);
         Registry.registerRenderItem(bronze_sword);
         Registry.registerRenderItem(jade_sword);

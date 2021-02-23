@@ -1,0 +1,7 @@
+{
+  "parent": "mm:item/portable_furnace_off",
+  "overrides": [
+    {"predicate" :  { "variant":  0}, "model": "mm:item/portable_furnace_off"},
+    {"predicate" :  { "variant":  1}, "model": "mm:item/portable_furnace_on"}
+  ]
+}

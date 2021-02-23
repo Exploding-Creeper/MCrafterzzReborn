@@ -6,11 +6,13 @@
 
 package me.hypherionmc.mcrafterzzreborn.modelements;
 
+import me.hypherionmc.mcrafterzzreborn.MCrafterzz;
 import me.hypherionmc.mcrafterzzreborn.RecipeRemover;
 import me.hypherionmc.mcrafterzzreborn.Registry;
 import me.hypherionmc.mcrafterzzreborn.blocks.*;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
 import me.hypherionmc.mcrafterzzreborn.creativetabs.*;
+import me.hypherionmc.mcrafterzzreborn.gui.PortableFurnaceGuiHandler;
 import me.hypherionmc.mcrafterzzreborn.items.Shield;
 import me.hypherionmc.mcrafterzzreborn.util.ModUtil;
 import net.minecraft.advancements.Advancement;
@@ -26,8 +28,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.stats.StatBase;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -291,7 +295,6 @@ public class ModElements {
     public static Item wooden_pattern_fence;
     public static Item wooden_pattern_fence_gate;
     public static Item wooden_pattern_stairs;
-
 
     public static void createBlocksAndItems() {
 
@@ -1010,6 +1013,7 @@ public class ModElements {
         Registry.registerRenderItem(wooden_pattern_fence);
         Registry.registerRenderItem(wooden_pattern_fence_gate);
         Registry.registerRenderItem(wooden_pattern_stairs);
+
     }
 
     public static void removeCrafting() {
@@ -1022,7 +1026,7 @@ public class ModElements {
     }
 
     public static void registerGuiHandlers() {
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(MCrafterzz.instance, new PortableFurnaceGuiHandler());
     }
 
     public static void registerEventHandlers() {
