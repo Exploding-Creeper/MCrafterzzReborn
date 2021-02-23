@@ -4,10 +4,10 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.worldgen;
+package me.hypherionmc.mcrafterzzreborn.world.worldgen;
 
 import me.hypherionmc.mcrafterzzreborn.config.Config;
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -29,10 +29,10 @@ public class ModFlowerGenerator implements IWorldGenerator {
     public WorldGenerator black_tulip;
 
     public ModFlowerGenerator() {
-        this.yellow_tulip = new ModWorldGeneratorFlowers(ModElements.yellow_tulip);
-        this.green_tulip = new ModWorldGeneratorFlowers(ModElements.green_tulip);
-        this.blue_tulip = new ModWorldGeneratorFlowers(ModElements.blue_tulip);
-        this.black_tulip = new ModWorldGeneratorFlowers(ModElements.black_tulip);
+        this.yellow_tulip = new ModWorldGeneratorFlowers(ModBlocks.yellow_tulip);
+        this.green_tulip = new ModWorldGeneratorFlowers(ModBlocks.green_tulip);
+        this.blue_tulip = new ModWorldGeneratorFlowers(ModBlocks.blue_tulip);
+        this.black_tulip = new ModWorldGeneratorFlowers(ModBlocks.black_tulip);
     }
 
     public void runGenerator(WorldGenerator generator, World world, Random random, int chunk_x, int chunk_z, int minChanceToSpawn, int maxChanceToSpawn, int chanceToSpawn) {

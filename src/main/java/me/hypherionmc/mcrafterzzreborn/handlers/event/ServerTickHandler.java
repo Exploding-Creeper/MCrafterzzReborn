@@ -4,10 +4,10 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.eventhandlers;
+package me.hypherionmc.mcrafterzzreborn.handlers.event;
 
 import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
-import me.hypherionmc.mcrafterzzreborn.network.WorldSavePacket;
+import me.hypherionmc.mcrafterzzreborn.network.packets.WorldSavePacket;
 import me.hypherionmc.mcrafterzzreborn.portable.PortableFurnaceMachine;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.nbt.NBTTagCompound;

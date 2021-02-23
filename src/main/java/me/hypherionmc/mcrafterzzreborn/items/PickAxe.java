@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -15,10 +16,13 @@ public class PickAxe extends ItemPickaxe {
 
     public Item repairItem;
 
-    public PickAxe(ToolMaterial material, Item repairItem) {
+    public PickAxe(String name, ToolMaterial material, Item repairItem) {
         super(material);
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModItems.ITEMS.add(this);
     }
 
     @Override

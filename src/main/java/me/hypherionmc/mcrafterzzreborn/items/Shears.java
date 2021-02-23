@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
@@ -15,10 +16,14 @@ public class Shears extends ItemShears {
 
     public Item repairItem;
 
-    public Shears(int level, int durability, Item repairItem) {
+    public Shears(String name, int level, int durability, Item repairItem) {
         this.setHarvestLevel("shears", level);
         this.setMaxDamage(durability);
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
+
+        ModItems.ITEMS.add(this);
 
     }
 

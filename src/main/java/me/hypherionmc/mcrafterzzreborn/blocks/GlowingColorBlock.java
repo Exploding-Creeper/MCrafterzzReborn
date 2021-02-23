@@ -13,8 +13,8 @@ import net.minecraft.block.material.Material;
 
 public class GlowingColorBlock extends ColorBlock {
 
-    public GlowingColorBlock(Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
-        super(material, stepSound, tool, toolLevel, mapColour);
+    public GlowingColorBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
+        super(name, material, stepSound, tool, toolLevel, mapColour);
         this.setLightLevel(1.0F);
     }
 

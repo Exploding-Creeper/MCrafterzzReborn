@@ -4,10 +4,10 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.worldgen;
+package me.hypherionmc.mcrafterzzreborn.world.worldgen;
 
 import me.hypherionmc.mcrafterzzreborn.config.Config;
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -30,11 +30,11 @@ public class ModOreGenerator implements IWorldGenerator {
     public WorldGenerator clay;
 
     public ModOreGenerator() {
-        this.copperOre = new WorldGenMinable(ModElements.copper_ore.getDefaultState(), Config.copper_block_count, BlockMatcher.forBlock(Blocks.STONE));
-        this.tinOre = new WorldGenMinable(ModElements.tin_ore.getDefaultState(), Config.tin_block_count, BlockMatcher.forBlock(Blocks.STONE));
-        this.amethystOre = new WorldGenMinable(ModElements.amethyst_ore.getDefaultState(), Config.amethyst_block_count, BlockMatcher.forBlock(Blocks.END_STONE));
-        this.jadeOre = new WorldGenMinable(ModElements.jade_ore.getDefaultState(), Config.jade_block_count, BlockMatcher.forBlock(Blocks.STONE));
-        this.basalt = new WorldGenMinable(ModElements.basalt.getDefaultState(), Config.basalt_block_count, BlockMatcher.forBlock(Blocks.STONE));
+        this.copperOre = new WorldGenMinable(ModBlocks.copper_ore.getDefaultState(), Config.copper_block_count, BlockMatcher.forBlock(Blocks.STONE));
+        this.tinOre = new WorldGenMinable(ModBlocks.tin_ore.getDefaultState(), Config.tin_block_count, BlockMatcher.forBlock(Blocks.STONE));
+        this.amethystOre = new WorldGenMinable(ModBlocks.amethyst_ore.getDefaultState(), Config.amethyst_block_count, BlockMatcher.forBlock(Blocks.END_STONE));
+        this.jadeOre = new WorldGenMinable(ModBlocks.jade_ore.getDefaultState(), Config.jade_block_count, BlockMatcher.forBlock(Blocks.STONE));
+        this.basalt = new WorldGenMinable(ModBlocks.basalt.getDefaultState(), Config.basalt_block_count, BlockMatcher.forBlock(Blocks.STONE));
         this.clay = new WorldGenMinable(Blocks.CLAY.getDefaultState(), Config.clay_block_count, BlockMatcher.forBlock(Blocks.STONE));
     }
 

@@ -6,9 +6,10 @@
 
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
+import me.hypherionmc.mcrafterzzreborn.items.ModItem;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ModTab extends CreativeTabs {
@@ -19,6 +20,6 @@ public class ModTab extends CreativeTabs {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(ModElements.bronze_ingot);
+        return new ItemStack(ModItems.bronze_ingot);
     }
 }

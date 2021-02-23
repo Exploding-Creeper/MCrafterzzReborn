@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.material.Material;
@@ -35,7 +36,7 @@ public class MultiTool extends ItemTool {
     public static float attack_speed = -2.8F;
     public static float base_damage = 3.0F;
 
-    public MultiTool(ToolMaterial material, Item repairItem) {
+    public MultiTool(String name, ToolMaterial material, Item repairItem) {
         super(base_damage, attack_speed, material, Collections.emptySet());
         this.setHarvestLevel("pickaxe", material.getHarvestLevel());
         this.setHarvestLevel("axe", material.getHarvestLevel());
@@ -43,6 +44,10 @@ public class MultiTool extends ItemTool {
         this.setHarvestLevel("hoe", material.getHarvestLevel());
         this.setHarvestLevel("sword", material.getHarvestLevel());
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
+
+        ModItems.ITEMS.add(this);
 
     }
 

@@ -9,14 +9,16 @@ import me.hypherionmc.mcrafterzzreborn.commands.CommandMCrafterzzMod;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandSetBlocks;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandTpDimension;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
-import me.hypherionmc.mcrafterzzreborn.eventhandlers.ServerTickHandler;
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElementsSmallerBlocks;
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElementsToolsArmour;
+import me.hypherionmc.mcrafterzzreborn.handlers.event.ServerTickHandler;
+import me.hypherionmc.mcrafterzzreborn.handlers.registry.RegistryHandler;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModElementsSmallerBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModElementsToolsArmour;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import me.hypherionmc.mcrafterzzreborn.worldgen.ModFlowerGenerator;
-import me.hypherionmc.mcrafterzzreborn.worldgen.ModOreGenerator;
+import me.hypherionmc.mcrafterzzreborn.world.worldgen.ModFlowerGenerator;
+import me.hypherionmc.mcrafterzzreborn.world.worldgen.ModOreGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -31,40 +33,27 @@ public class CommonProxy {
         Config.init(event.getSuggestedConfigurationFile());
         Config.syncConfig();
 
-        ModElements.createBlocksAndItems();
-        ModElements.registerItemsAndBlocks();
+        ModItems.setupRepairItemForToolsAndArmour();
 
-        ModElementsSmallerBlocks.createBlocksAndItems();
-        ModElementsSmallerBlocks.registerItemsAndBlocks();
+        ModBlocks.crafting();
 
-        ModElementsToolsArmour.createBlocksAndItems();
-        ModElementsToolsArmour.registerItemsAndBlocks();
-        ModElementsToolsArmour.setupRepairItemForToolsAndArmour();
-        ModElements.removeCrafting();
-        ModElements.crafting();
-        ModElements.registerAchievements();
-        ModElements.registerStats();
-
-        ModElements.registerEventHandlers();
+        RegistryHandler.registerEventHandlers();
         ModElementsSmallerBlocks.crafting();
         ModElementsToolsArmour.crafting();
     }
 
     public void init(FMLInitializationEvent event) {
-        ModElements.registerRenders();
-        ModElements.registerOreDictionary();
-        ModElementsSmallerBlocks.registerRenders();
-        ModElementsToolsArmour.registerRenders();
+        RegistryHandler.registerOreDictionary();
         GameRegistry.registerWorldGenerator(new ModOreGenerator(), 0);
         GameRegistry.registerWorldGenerator(new ModFlowerGenerator(), 100);
-        //GameRegistry.registerTileEntity(TileEntityCrusher.class, "mm:tecrusher");
-        MinecraftForge.EVENT_BUS.register(new ServerTickHandler());
 
-        ModElements.registerGuiHandlers();
+        RegistryHandler.registerTE();
+        RegistryHandler.registerGuiHandlers();
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-        new NetworkHandler();
+        RegistryHandler.registerNetwork();
+        RegistryHandler.removeCrafting();
     }
 
     public void serverStart(FMLServerStartingEvent event) {

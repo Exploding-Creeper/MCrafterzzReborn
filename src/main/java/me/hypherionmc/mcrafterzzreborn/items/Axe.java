@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
@@ -15,10 +16,13 @@ public class Axe extends ItemAxe {
 
     public Item repairItem;
 
-    public Axe(ToolMaterial material, Item repairItem) {
+    public Axe(String name, ToolMaterial material, Item repairItem) {
         super(material, material.getAttackDamage(), -3.0F);
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModItems.ITEMS.add(this);
     }
 
     @Override

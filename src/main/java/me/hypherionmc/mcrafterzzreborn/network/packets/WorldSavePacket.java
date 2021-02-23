@@ -4,7 +4,7 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.network;
+package me.hypherionmc.mcrafterzzreborn.network.packets;
 
 import io.netty.buffer.ByteBuf;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;

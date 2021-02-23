@@ -4,7 +4,7 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.worldgen;
+package me.hypherionmc.mcrafterzzreborn.world.worldgen;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

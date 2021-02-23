@@ -6,10 +6,12 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -19,10 +21,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GlowingAir extends Block {
 
-    public GlowingAir(Material material) {
+    public GlowingAir(String name, Material material) {
         super(material);
         this.setLightLevel(1.0F);
         this.setLightOpacity(1);
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
+
+        ModBlocks.BLOCKS.add(this);
+        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
 
     }
 

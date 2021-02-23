@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
@@ -21,10 +22,12 @@ public class Bow extends ItemBow {
 
     public Item repairItem;
 
-    public Bow(int durability, Item repairItem) {
+    public Bow(String name, int durability, Item repairItem) {
         this.maxStackSize = 1;
         this.setMaxDamage(durability);
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
         this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
 
@@ -47,6 +50,8 @@ public class Bow extends ItemBow {
             }
 
         });
+
+        ModItems.ITEMS.add(this);
     }
 
     @Override

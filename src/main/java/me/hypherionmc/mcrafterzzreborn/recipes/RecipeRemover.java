@@ -4,7 +4,7 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn;
+package me.hypherionmc.mcrafterzzreborn.recipes;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.recipebook.RecipeList;

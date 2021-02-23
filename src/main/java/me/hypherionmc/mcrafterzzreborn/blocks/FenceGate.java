@@ -6,7 +6,8 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -18,6 +19,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -41,12 +43,16 @@ public class FenceGate extends BlockHorizontal {
     protected static final AxisAlignedBB AABB_CLOSED_SELECTED_XAXIS = new AxisAlignedBB(0.375D, 0.0D, 0.0D, 0.625D, 1.5D, 1.0D);
 
     
-    public FenceGate(Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
+    public FenceGate(String name, Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
         super(material, mapColour);
         this.setSoundType(stepSound);
         this.setHarvestLevel(tool, toolLevel);
         this.setDefaultState(this.getDefaultState().withProperty(OPEN, false).withProperty(POWERED, false).withProperty(IN_WALL, false));
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModBlocks.BLOCKS.add(this);
+        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
     @Override

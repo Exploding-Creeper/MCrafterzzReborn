@@ -6,7 +6,7 @@
 
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,6 +19,6 @@ public class WorldTab extends CreativeTabs {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModElements.purple_tulip));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.purple_tulip));
     }
 }

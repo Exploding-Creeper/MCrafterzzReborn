@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
@@ -17,10 +18,13 @@ public class Hoe extends ItemHoe {
 
     public Item repairItem;
 
-    public Hoe(ToolMaterial material, Item repairItem) {
+    public Hoe(String name, ToolMaterial material, Item repairItem) {
         super(material);
         this.repairItem = repairItem;
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModItems.ITEMS.add(this);
     }
 
     @Override

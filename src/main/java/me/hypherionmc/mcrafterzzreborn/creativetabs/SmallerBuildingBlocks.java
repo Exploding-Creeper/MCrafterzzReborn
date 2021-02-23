@@ -6,7 +6,8 @@
 
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElementsSmallerBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModElementsSmallerBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,6 +20,6 @@ public class SmallerBuildingBlocks extends CreativeTabs {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModElementsSmallerBlocks.acacia_log_stairs));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.acacia_log_stairs));
     }
 }

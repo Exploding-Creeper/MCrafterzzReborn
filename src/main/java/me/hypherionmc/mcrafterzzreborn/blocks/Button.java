@@ -6,11 +6,13 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.BlockButton;
 import net.minecraft.block.SoundType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,11 +21,15 @@ import javax.annotation.Nullable;
 
 public class Button extends BlockButton {
 
-    public Button(boolean wooden, SoundType stepSound, String tool, int toolLevel) {
+    public Button(String name, boolean wooden, SoundType stepSound, String tool, int toolLevel) {
         super(wooden);
         this.setSoundType(stepSound);
         this.setHarvestLevel(tool, toolLevel);
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModBlocks.BLOCKS.add(this);
+        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
     @Override

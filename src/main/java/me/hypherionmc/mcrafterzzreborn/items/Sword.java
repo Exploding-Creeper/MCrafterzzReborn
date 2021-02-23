@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -15,10 +16,13 @@ public class Sword extends ItemSword {
 
     public Item repairItem;
 
-    public Sword(ToolMaterial material, Item repairItem) {
+    public Sword(String name, ToolMaterial material, Item repairItem) {
         super(material);
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
         this.repairItem = repairItem;
 
+        ModItems.ITEMS.add(this);
     }
 
     @Override

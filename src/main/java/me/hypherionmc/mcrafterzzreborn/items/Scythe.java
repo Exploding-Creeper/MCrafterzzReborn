@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -28,10 +29,13 @@ public class Scythe extends ItemTool {
     public static float attack_speed = -2.8F;
     public static float damage = 3.0F;
 
-    public Scythe(ToolMaterial toolMaterial, int durabillity) {
+    public Scythe(String name, ToolMaterial toolMaterial, int durabillity) {
         super(damage, attack_speed, toolMaterial, Collections.emptySet());
         this.setMaxDamage(durabillity);
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
 
+        ModItems.ITEMS.add(this);
     }
 
     @Override

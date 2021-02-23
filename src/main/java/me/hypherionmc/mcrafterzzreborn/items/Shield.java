@@ -7,6 +7,7 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -38,6 +39,12 @@ public class Shield extends ItemShield {
         this.setMaxDamage(durability);
         this.name = name;
         this.tab = tab;
+        // Added exception for Event Handler
+        if (!name.isEmpty()) {
+            this.setRegistryName(name);
+            this.setTranslationKey(name);
+            ModItems.ITEMS.add(this);
+        }
 
         this.addPropertyOverride(new ResourceLocation("blocking"), new IItemPropertyGetter() {
 
@@ -48,6 +55,8 @@ public class Shield extends ItemShield {
 
         });
         this.setCreativeTab(tab);
+
+
     }
 
     @Override

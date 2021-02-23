@@ -6,14 +6,12 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.modelements.ModElements;
-import me.hypherionmc.mcrafterzzreborn.util.IHasCustomRender;
+import me.hypherionmc.mcrafterzzreborn.init.ModTabs;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.IItemPropertyGetter;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
@@ -25,12 +23,13 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class PortableFurnace extends Item {
+public class PortableFurnace extends ModItem {
 
     public static final String MACHINE_TAG = "MACHINE_ID";
 
-    public PortableFurnace() {
-        this.setCreativeTab(ModElements.creativeTabTools);
+    public PortableFurnace(String name) {
+        super(name);
+        this.setCreativeTab(ModTabs.creativeTabTools);
         this.maxStackSize = 1;
 
         this.addPropertyOverride(new ResourceLocation("variant"), new IItemPropertyGetter() {
