@@ -21,4 +21,6 @@ You are welcome to fork this repo and do a PR for any code you want to contribut
 
 ## License
 
-This mod may be used in Modpacks, but the code is Licensed under All Rights Reserved (as with the original mod and code). This may change in the future.
+~~This mod may be used in Modpacks, but the code is Licensed under All Rights Reserved (as with the original mod and code). This may change in the future.~~
+
+This mod and code is now licensed under MIT. Do what you want with it, just stick to the license!
