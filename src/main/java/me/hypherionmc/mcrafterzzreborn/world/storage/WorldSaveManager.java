@@ -6,7 +6,7 @@
 
 package me.hypherionmc.mcrafterzzreborn.world.storage;
 
-import me.hypherionmc.mcrafterzzreborn.portable.PortableFurnaceMachine;
+import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
@@ -113,7 +113,7 @@ public class WorldSaveManager extends WorldSavedData {
         INSTANCE = null;
     }
 
-    public static void setINSTANCE(World world) {
+    public static void setInstance(World world) {
         MapStorage storage = world.getMapStorage();
         WorldSaveManager result = (WorldSaveManager)storage.getOrLoadData(WorldSaveManager.class, "mmreborn");
         if (result == null) {
@@ -129,7 +129,7 @@ public class WorldSaveManager extends WorldSavedData {
         INSTANCE = new WorldSaveManager("mmreborn");
     }
 
-    public static WorldSaveManager getINSTANCE() {
+    public static WorldSaveManager getInstance() {
         return INSTANCE;
     }
 
@@ -137,10 +137,10 @@ public class WorldSaveManager extends WorldSavedData {
     public static void setFurnaceNBT(NBTTagCompound nbt) {
         PortableFurnaceMachine furnace = new PortableFurnaceMachine();
         furnace.readFromNBT(nbt);
-        if (getINSTANCE().getFurnaceMachine(furnace.getMachineID()) == null) {
+        if (getInstance().getFurnaceMachine(furnace.getMachineID()) == null) {
             portableFurnaces.add(furnace);
         } else {
-            getINSTANCE().getFurnaceMachine(furnace.getMachineID()).readFromNBT(nbt);
+            getInstance().getFurnaceMachine(furnace.getMachineID()).readFromNBT(nbt);
         }
 
     }

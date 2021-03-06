@@ -8,7 +8,7 @@ package me.hypherionmc.mcrafterzzreborn.handlers.event;
 
 import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
 import me.hypherionmc.mcrafterzzreborn.network.packets.WorldSavePacket;
-import me.hypherionmc.mcrafterzzreborn.portable.PortableFurnaceMachine;
+import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -22,7 +22,7 @@ public class ServerTickHandler {
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
-            WorldSaveManager.getINSTANCE();
+            WorldSaveManager.getInstance();
 
             List<PortableFurnaceMachine> portableFurnaceMachines = WorldSaveManager.portableFurnaces;
 

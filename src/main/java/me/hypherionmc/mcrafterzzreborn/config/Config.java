@@ -57,9 +57,6 @@ public class Config {
     public static int clay_chance_to_spawn_in_chunk;
     public static int clay_min_height;
     public static int clay_max_height;
-    public static boolean crafting = true;
-    public static boolean duplicate_patterns = true;
-    public static boolean craft_vanilla_blocks_with_patterns = true;
 
 
     @SubscribeEvent
@@ -123,10 +120,6 @@ public class Config {
         flowers_chance_to_spawn = config.getInt("Flowers Chance To Spawn", advancedWorldCategory, 16, 0, 10000, "Changes the chance for flowers to spawn (Highter value is less chance to spawn)");
         min_flowers_to_spawn_in_chunk = config.getInt("minimum Flowers To Spawn In Chunk", advancedWorldCategory, 3, 0, 10000, "Changes the minimum flowers to spawn in a chunk (if they spawn)");
         max_flowers_to_spawn_in_chunk = config.getInt("Maximum Flowers To Spawn In Chunk", advancedWorldCategory, 15, 0, 10000, "Changes the maximum flowers to spawn in a chunk (if they spawn)");
-        config.addCustomCategoryComment(craftingCategory, "Crafting Settings");
-        crafting = config.getBoolean("Crafting", craftingCategory, true, "Turns on and off crafting of all items and blocks added by this mod");
-        duplicate_patterns = config.getBoolean("Duplicate Patterns", craftingCategory, true, "Turns on and off duplication of wooden patterns, for example a wooden pattern and a wooden pattern wall crafts 2 wooden pattern walls");
-        craft_vanilla_blocks_with_patterns = config.getBoolean("Craft Vanilla Blocks With Patterns", craftingCategory, true, "Enables crafting of vanilla blocks(buttons, trapdoors etc) with wooden patterns");
         config.save();
     }
 

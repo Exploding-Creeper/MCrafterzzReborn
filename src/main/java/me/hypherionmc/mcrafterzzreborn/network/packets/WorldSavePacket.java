@@ -39,7 +39,7 @@ public class WorldSavePacket implements IMessage {
 
     public void execute(MessageContext ctx) {
         if (ctx.side == Side.CLIENT && !Minecraft.getMinecraft().isSingleplayer()) {
-            if (WorldSaveManager.getINSTANCE() != null) {
+            if (WorldSaveManager.getInstance() != null) {
                 WorldSaveManager.setFurnaceNBT(nbtTagCompound);
             } else {
                 WorldSaveManager.setInstance();

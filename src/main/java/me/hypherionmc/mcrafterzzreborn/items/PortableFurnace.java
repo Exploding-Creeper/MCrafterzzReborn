@@ -35,7 +35,7 @@ public class PortableFurnace extends ModItem {
         this.addPropertyOverride(new ResourceLocation("variant"), new IItemPropertyGetter() {
             @Override
             public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
-                if (stack.hasTagCompound() && WorldSaveManager.getINSTANCE().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)) != null && WorldSaveManager.getINSTANCE().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)).isBurning()) {
+                if (stack.hasTagCompound() && WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)) != null && WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)).isBurning()) {
                     return 1;
                 } else {
                     return 0;
@@ -59,10 +59,10 @@ public class PortableFurnace extends ModItem {
         if (!worldIn.isRemote) {
             if (!stack.hasTagCompound()) {
                 stack.setTagCompound(new NBTTagCompound());
-                stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getINSTANCE().createFurnace());
+                stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
             } else {
                 if (!stack.getTagCompound().hasKey(MACHINE_TAG)) {
-                    stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getINSTANCE().createFurnace());
+                    stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
                 }
             }
 

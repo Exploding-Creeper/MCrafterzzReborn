@@ -6,7 +6,7 @@
 
 package me.hypherionmc.mcrafterzzreborn.gui.containers;
 
-import me.hypherionmc.mcrafterzzreborn.portable.PortableFurnaceMachine;
+import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -178,7 +178,7 @@ public class ContainerPortableFurnace extends Container {
     public void onContainerClosed(EntityPlayer playerIn) {
 
         if (!playerIn.getEntityWorld().isRemote) {
-            WorldSaveManager.getINSTANCE().markDirty();
+            WorldSaveManager.getInstance().markDirty();
         }
     }
 

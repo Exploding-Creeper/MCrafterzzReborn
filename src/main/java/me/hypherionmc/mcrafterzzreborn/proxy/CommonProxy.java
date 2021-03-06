@@ -41,7 +41,6 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event) {
         RegistryHandler.registerNetwork();
-        RegistryHandler.removeCrafting();
         ModItems.setupRepairItemForToolsAndArmour();
     }
 
@@ -51,6 +50,6 @@ public class CommonProxy {
         event.registerServerCommand(new CommandTpDimension());
 
         WorldSaveManager.resetAll();
-        WorldSaveManager.setINSTANCE(event.getServer().getEntityWorld());
+        WorldSaveManager.setInstance(event.getServer().getEntityWorld());
     }
 }

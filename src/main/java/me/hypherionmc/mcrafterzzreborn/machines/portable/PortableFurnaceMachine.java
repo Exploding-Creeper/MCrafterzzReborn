@@ -4,7 +4,7 @@
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
 
-package me.hypherionmc.mcrafterzzreborn.portable;
+package me.hypherionmc.mcrafterzzreborn.machines.portable;
 
 import me.hypherionmc.mcrafterzzreborn.gui.containers.ContainerPortableFurnace;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
@@ -23,7 +23,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -232,7 +231,7 @@ public class PortableFurnaceMachine implements IInventory {
 
     @Override
     public void markDirty() {
-        WorldSaveManager.getINSTANCE().markDirty();
+        WorldSaveManager.getInstance().markDirty();
     }
 
     @Override

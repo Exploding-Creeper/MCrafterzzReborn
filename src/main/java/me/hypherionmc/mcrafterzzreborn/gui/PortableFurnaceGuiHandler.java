@@ -25,7 +25,7 @@ public class PortableFurnaceGuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         if (ID == guiID && player.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof PortableFurnace) {
             ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
-            return WorldSaveManager.getINSTANCE().getFurnaceMachine(stack.getTagCompound().getInteger(PortableFurnace.MACHINE_TAG)).createContainer(player.inventory);
+            return WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(PortableFurnace.MACHINE_TAG)).createContainer(player.inventory);
         }
         return null;
     }
@@ -35,7 +35,7 @@ public class PortableFurnaceGuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         if (ID == guiID && player.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof PortableFurnace) {
             ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
-            return new GuiPortableFurnace(player.inventory, WorldSaveManager.getINSTANCE().getFurnaceMachine(stack.getTagCompound().getInteger(PortableFurnace.MACHINE_TAG)));
+            return new GuiPortableFurnace(player.inventory, WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(PortableFurnace.MACHINE_TAG)));
         }
         return null;
     }
