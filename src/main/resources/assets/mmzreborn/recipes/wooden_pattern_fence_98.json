@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_pattern_fence"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern"
+    },
+    {
+      "item": "minecraft:dark_oak_fence"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

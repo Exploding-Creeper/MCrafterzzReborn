@@ -1,0 +1,15 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "mmzreborn:items/stone_shield"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "mmzreborn:item/stone_shield_blocking"
+        }
+    ]
+}
+

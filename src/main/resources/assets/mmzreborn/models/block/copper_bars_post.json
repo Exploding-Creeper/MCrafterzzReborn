@@ -1,0 +1,8 @@
+{
+    "parent": "mmzreborn:block/bars_post",
+    "textures": {
+        "particle": "mmzreborn:blocks/copper_bars",
+        "bars": "mmzreborn:blocks/copper_bars",
+        "edge": "mmzreborn:blocks/copper_bars"
+    }
+}

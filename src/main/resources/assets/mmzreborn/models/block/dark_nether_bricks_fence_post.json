@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/fence_post",
+    "textures": {
+        "texture": "mmzreborn:blocks/dark_nether_bricks"
+    }
+}

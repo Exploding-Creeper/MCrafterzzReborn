@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:amethyst"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

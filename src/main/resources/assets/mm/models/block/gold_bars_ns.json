@@ -1,8 +1,0 @@
-{
-    "parent": "mm:block/bars_ns",
-    "textures": {
-        "particle": "mm:blocks/gold_bars",
-        "bars": "mm:blocks/gold_bars",
-        "edge": "mm:blocks/gold_bars"
-    }
-}

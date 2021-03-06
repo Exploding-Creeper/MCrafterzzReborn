@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:flint_and_gold"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "mmzreborn:item/portable_furnace_off",
+  "overrides": [
+    {"predicate" :  { "variant":  0}, "model": "mmzreborn:item/portable_furnace_off"},
+    {"predicate" :  { "variant":  1}, "model": "mmzreborn:item/portable_furnace_on"}
+  ]
+}

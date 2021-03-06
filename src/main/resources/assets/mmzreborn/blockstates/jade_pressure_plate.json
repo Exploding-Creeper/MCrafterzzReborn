@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mmzreborn:jade_pressure_plate_up" },
+        "powered=true": { "model": "mmzreborn:jade_pressure_plate_down" }
+    }
+}

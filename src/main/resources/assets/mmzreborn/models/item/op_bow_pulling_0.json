@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:item/op_bow",
+    "textures": {
+        "layer0": "mmzreborn:items/op_bow_pulling_0"
+    }
+}

@@ -1,6 +1,0 @@
-{
-    "parent": "mm:block/wall_side",
-    "textures": {
-        "wall": "mm:blocks/copper_block"
-    }
-}

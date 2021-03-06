@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mmzreborn:jade"
+  },
+  "ingredient": {
+    "item": "mmzreborn:jade_ore"
+  },
+  "type": "minecraft:smelting",
+  "experience": 1.2,
+  "cookingtime": 200
+}

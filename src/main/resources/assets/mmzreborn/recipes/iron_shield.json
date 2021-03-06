@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:iron_shield"
+  },
+  "pattern": [
+    "III",
+    "III",
+    " I "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  }
+}

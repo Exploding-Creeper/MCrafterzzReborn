@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:coloured_cobblestone_black"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

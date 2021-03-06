@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/button_inventory",
+    "textures": {
+        "texture": "mmzreborn:blocks/tin_block"
+    }
+}

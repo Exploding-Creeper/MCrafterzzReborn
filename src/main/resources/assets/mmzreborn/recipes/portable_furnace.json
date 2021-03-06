@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mmzreborn:portable_furnace"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:furnace"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:basalt_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:basalt"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "mmzreborn:block/bars_post",
+    "textures": {
+        "particle": "mmzreborn:blocks/amethyst_bars",
+        "bars": "mmzreborn:blocks/amethyst_bars",
+        "edge": "mmzreborn:blocks/amethyst_bars"
+    }
+}

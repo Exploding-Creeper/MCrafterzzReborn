@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_shears"
+  },
+  "pattern": [
+    "   ",
+    "C  ",
+    " C "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "mmzreborn:copper_ingot"
+    }
+  }
+}

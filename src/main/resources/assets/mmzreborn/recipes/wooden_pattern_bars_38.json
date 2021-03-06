@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_pattern_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern"
+    },
+    {
+      "item": "mmzreborn:amethyst_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/trapdoor_bottom",
+    "textures": {
+        "texture": "mmzreborn:blocks/emerald_trapdoor"
+    }
+}

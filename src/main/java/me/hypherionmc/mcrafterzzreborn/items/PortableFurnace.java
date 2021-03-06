@@ -48,7 +48,7 @@ public class PortableFurnace extends ModItem {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         if (!worldIn.isRemote) {
             BlockPos pos = playerIn.getPosition();
-            playerIn.openGui("mm", 15, worldIn, pos.getX(), pos.getY(), pos.getZ());
+            playerIn.openGui("mmzreborn", 15, worldIn, pos.getX(), pos.getY(), pos.getZ());
         }
         return ActionResult.newResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }

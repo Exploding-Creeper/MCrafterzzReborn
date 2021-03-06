@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mmzreborn:bronze_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:bronze_sword"
+    },
+    {
+      "item": "mmzreborn:bronze_pickaxe"
+    },
+    {
+      "item": "mmzreborn:bronze_axe"
+    },
+    {
+      "item": "mmzreborn:bronze_shovel"
+    },
+    {
+      "item": "mmzreborn:bronze_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

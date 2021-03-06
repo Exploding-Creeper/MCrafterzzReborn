@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:wooden_button"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_button"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

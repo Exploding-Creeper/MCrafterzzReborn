@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_sword"
+  },
+  "pattern": [
+    " C ",
+    " C ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "mmzreborn:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

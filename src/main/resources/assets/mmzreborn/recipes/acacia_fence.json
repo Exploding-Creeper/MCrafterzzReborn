@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:acacia_fence"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_fence"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 4
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

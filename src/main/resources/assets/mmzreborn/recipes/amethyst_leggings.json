@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_leggings"
+  },
+  "pattern": [
+    "AAA",
+    "A A",
+    "A A"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mmzreborn:amethyst"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_ingot"
+  },
+  "ingredient": {
+    "item": "mmzreborn:copper_ore"
+  },
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "cookingtime": 200
+}

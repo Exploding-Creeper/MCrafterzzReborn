@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_axe"
+  },
+  "pattern": [
+    "AA ",
+    "AS ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mmzreborn:amethyst"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:birch_fence"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_fence"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 2
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

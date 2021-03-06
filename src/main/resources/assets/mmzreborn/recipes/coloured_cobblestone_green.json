@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:coloured_cobblestone_green"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 2
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

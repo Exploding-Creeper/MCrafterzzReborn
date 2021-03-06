@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:gold_bow"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

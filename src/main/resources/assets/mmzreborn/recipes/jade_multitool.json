@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:jade_sword"
+    },
+    {
+      "item": "mmzreborn:jade_pickaxe"
+    },
+    {
+      "item": "mmzreborn:jade_axe"
+    },
+    {
+      "item": "mmzreborn:jade_shovel"
+    },
+    {
+      "item": "mmzreborn:jade_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

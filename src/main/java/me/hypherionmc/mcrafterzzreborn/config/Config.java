@@ -61,7 +61,7 @@ public class Config {
 
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-        if (eventArgs.getModID().equals("mm")) {
+        if (eventArgs.getModID().equals("mmzreborn")) {
             syncConfig();
         }
 

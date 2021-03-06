@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/wall_inventory",
+    "textures": {
+        "wall": "mmzreborn:blocks/bronze_block"
+    }
+}

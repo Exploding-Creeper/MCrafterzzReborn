@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:bronze_helmet"
+  },
+  "pattern": [
+    "   ",
+    "BBB",
+    "B B"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mmzreborn:bronze_ingot"
+    }
+  }
+}

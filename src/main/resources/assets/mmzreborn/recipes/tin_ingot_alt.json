@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mmzreborn:tin_ingot"
+  },
+  "ingredient": {
+    "item": "mmzreborn:tin_ore"
+  },
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "cookingtime": 200
+}

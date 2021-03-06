@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:quartz_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

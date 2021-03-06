@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:dark_nether_bricks_fence_gate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_fence_gate"
+    },
+    {
+      "item": "mmzreborn:dark_nether_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:diamond_scythe"
+  },
+  "pattern": [
+    "DDD",
+    " SD",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  }
+}

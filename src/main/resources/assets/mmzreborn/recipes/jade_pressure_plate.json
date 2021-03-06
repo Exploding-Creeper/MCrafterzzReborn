@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "mmzreborn:jade"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

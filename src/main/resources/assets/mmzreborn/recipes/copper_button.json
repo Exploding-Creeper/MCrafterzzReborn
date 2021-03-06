@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_button"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_button"
+    },
+    {
+      "item": "mmzreborn:copper_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

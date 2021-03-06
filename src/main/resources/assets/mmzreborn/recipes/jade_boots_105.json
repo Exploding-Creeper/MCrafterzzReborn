@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_boots"
+  },
+  "pattern": [
+    "J J",
+    "J J",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "J": {
+      "item": "mmzreborn:jade"
+    }
+  }
+}

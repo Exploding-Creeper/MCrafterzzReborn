@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:basalt_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "mmzreborn:basalt"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

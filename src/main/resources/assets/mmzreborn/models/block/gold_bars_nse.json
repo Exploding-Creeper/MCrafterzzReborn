@@ -1,0 +1,8 @@
+{
+    "parent": "mmzreborn:block/bars_nse",
+    "textures": {
+        "particle": "mmzreborn:blocks/gold_bars",
+        "bars": "mmzreborn:blocks/gold_bars",
+        "edge": "mmzreborn:blocks/gold_bars"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:gold_trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

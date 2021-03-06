@@ -20,12 +20,12 @@ public class CommandMCrafterzzMod extends CommandBase {
 
     @Override
     public String getName() {
-        return "mm";
+        return "mmzreborn";
     }
 
     @Override
     public String getUsage(ICommandSender sender) {
-        return "mm";
+        return "mmzreborn";
     }
 
     @Override
@@ -38,12 +38,12 @@ public class CommandMCrafterzzMod extends CommandBase {
             Style aqua = (new Style()).setColor(TextFormatting.DARK_AQUA);
             Style purple = (new Style()).setColor(TextFormatting.DARK_PURPLE);
             Style yellow = (new Style()).setColor(TextFormatting.YELLOW);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.name", new Object[0])).setStyle(red), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.modid", new Object[0])).setStyle(green), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.version", new Object[0])).setStyle(blue), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.minecraftversion", new Object[0])).setStyle(aqua), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.creator", new Object[0])).setStyle(purple), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mm.updatepage", new Object[0])).setStyle(yellow), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.name", new Object[0])).setStyle(red), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.modid", new Object[0])).setStyle(green), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.version", new Object[0])).setStyle(blue), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.minecraftversion", new Object[0])).setStyle(aqua), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.creator", new Object[0])).setStyle(purple), false);
+            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.updatepage", new Object[0])).setStyle(yellow), false);
         }
     }
 

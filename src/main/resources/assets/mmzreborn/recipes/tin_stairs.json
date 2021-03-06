@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:tin_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:tin_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

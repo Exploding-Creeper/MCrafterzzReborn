@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:flint_and_jade"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:jade"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

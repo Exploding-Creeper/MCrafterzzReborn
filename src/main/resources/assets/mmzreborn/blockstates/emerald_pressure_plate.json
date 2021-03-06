@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mmzreborn:emerald_pressure_plate_up" },
+        "powered=true": { "model": "mmzreborn:emerald_pressure_plate_down" }
+    }
+}

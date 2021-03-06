@@ -29,10 +29,10 @@ public class ModItems {
     public static Item.ToolMaterial copperTool = EnumHelper.addToolMaterial("copper", 1, 170, 5.0F, 1.0F, 15);
     public static Item.ToolMaterial bronzeTool = EnumHelper.addToolMaterial("bronze", 2, 250, 6.5F, 2.0F, 15);
     
-    public static ItemArmor.ArmorMaterial amethystArmour = EnumHelper.addArmorMaterial("amethyst", "mm:amethyst", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-    public static ItemArmor.ArmorMaterial jadeArmour = EnumHelper.addArmorMaterial("jade", "mm:jade", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-    public static ItemArmor.ArmorMaterial copperArmour = EnumHelper.addArmorMaterial("copper", "mm:copper", 13, new int[]{2, 7, 4, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-    public static ItemArmor.ArmorMaterial bronzeArmour = EnumHelper.addArmorMaterial("bronze", "mm:bronze", 16, new int[]{3, 6, 4, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static ItemArmor.ArmorMaterial amethystArmour = EnumHelper.addArmorMaterial("amethyst", "mmzreborn:amethyst", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+    public static ItemArmor.ArmorMaterial jadeArmour = EnumHelper.addArmorMaterial("jade", "mmzreborn:jade", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+    public static ItemArmor.ArmorMaterial copperArmour = EnumHelper.addArmorMaterial("copper", "mmzreborn:copper", 13, new int[]{2, 7, 4, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static ItemArmor.ArmorMaterial bronzeArmour = EnumHelper.addArmorMaterial("bronze", "mmzreborn:bronze", 16, new int[]{3, 6, 4, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
     
     /**
      * Items

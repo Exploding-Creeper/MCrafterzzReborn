@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:amethyst_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

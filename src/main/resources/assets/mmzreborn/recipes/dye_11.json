@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "minecraft:dye",
+    "data": 11
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:yellow_tulip"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

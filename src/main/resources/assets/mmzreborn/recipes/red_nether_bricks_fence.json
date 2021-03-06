@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:red_nether_bricks_fence"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_fence"
+    },
+    {
+      "item": "minecraft:red_nether_brick"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

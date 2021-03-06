@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "mmzreborn:blocks/dark_nether_bricks"
+	}
+}

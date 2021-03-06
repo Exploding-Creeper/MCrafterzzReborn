@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_hammer"
+  },
+  "pattern": [
+    "WWW",
+    "WWW",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

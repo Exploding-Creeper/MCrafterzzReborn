@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:emerald_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

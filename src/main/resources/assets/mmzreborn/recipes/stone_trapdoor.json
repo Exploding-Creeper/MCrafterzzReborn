@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:stone_trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/trapdoor_top",
+    "textures": {
+        "texture": "mmzreborn:blocks/gold_trapdoor"
+    }
+}

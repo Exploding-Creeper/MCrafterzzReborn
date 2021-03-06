@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:granite_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:stone",
+      "data": 1
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

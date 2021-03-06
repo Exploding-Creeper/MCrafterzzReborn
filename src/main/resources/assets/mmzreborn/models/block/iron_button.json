@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/button",
+    "textures": {
+        "texture": "blocks/iron_block"
+    }
+}

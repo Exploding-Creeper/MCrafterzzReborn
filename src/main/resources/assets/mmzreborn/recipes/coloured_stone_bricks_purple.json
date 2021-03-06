@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:coloured_stone_bricks_purple"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stonebrick",
+      "data": 0
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 5
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

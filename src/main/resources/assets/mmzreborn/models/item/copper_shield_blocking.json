@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:item/shield_blocking",
+    "textures":{
+        "layer0": "mmzreborn:items/copper_shield"
+    }
+}

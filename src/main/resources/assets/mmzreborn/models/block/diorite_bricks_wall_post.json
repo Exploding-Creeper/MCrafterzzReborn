@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/wall_post",
+    "textures": {
+        "wall": "mmzreborn:blocks/diorite_bricks"
+    }
+}

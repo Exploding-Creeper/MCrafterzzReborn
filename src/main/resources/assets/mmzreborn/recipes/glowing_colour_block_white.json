@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:glowing_colour_block_white"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:colour_block_white"
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

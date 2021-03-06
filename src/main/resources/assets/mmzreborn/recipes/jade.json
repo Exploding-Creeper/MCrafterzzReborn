@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "mmzreborn:jade",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:jade_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

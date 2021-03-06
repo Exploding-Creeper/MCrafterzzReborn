@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:jade"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

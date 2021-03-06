@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "mmzreborn:granite_bricks",
+    "count": 4
+  },
+  "pattern": [
+    " GG",
+    " GG",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:stone",
+      "data": 1
+    }
+  }
+}

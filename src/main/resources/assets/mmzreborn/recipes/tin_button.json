@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:tin_button"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_button"
+    },
+    {
+      "item": "mmzreborn:tin_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

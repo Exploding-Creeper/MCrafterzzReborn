@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:flint_and_amethyst"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:amethyst"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

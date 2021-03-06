@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_pattern_wall",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern"
+    },
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

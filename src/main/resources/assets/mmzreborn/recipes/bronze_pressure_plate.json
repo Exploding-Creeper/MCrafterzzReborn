@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:bronze_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "mmzreborn:bronze_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

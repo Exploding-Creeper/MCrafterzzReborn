@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:cobblestone_wall",
+    "data": 0
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:cobblestone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

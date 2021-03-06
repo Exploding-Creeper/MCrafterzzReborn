@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:diorite_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:stone",
+      "data": 3
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

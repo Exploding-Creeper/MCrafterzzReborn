@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:colour_block_gray"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:colour_block_white"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 8
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

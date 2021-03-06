@@ -1,8 +1,0 @@
-{
-    "parent": "mm:block/bars_post",
-    "textures": {
-        "particle": "mm:blocks/copper_bars",
-        "bars": "mm:blocks/copper_bars",
-        "edge": "mm:blocks/copper_bars"
-    }
-}

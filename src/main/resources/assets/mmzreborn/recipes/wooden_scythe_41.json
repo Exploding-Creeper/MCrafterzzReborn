@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_scythe"
+  },
+  "pattern": [
+    "WWW",
+    " SW",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

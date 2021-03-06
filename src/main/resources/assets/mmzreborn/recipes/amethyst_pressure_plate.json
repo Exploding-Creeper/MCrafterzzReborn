@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "mmzreborn:amethyst"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

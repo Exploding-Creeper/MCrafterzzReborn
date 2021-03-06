@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:item/amethyst_bow",
+    "textures": {
+        "layer0": "mmzreborn:items/amethyst_bow_pulling_1"
+    }
+}

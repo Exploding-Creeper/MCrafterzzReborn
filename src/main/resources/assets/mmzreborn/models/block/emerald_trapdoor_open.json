@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/trapdoor_open",
+    "textures": {
+        "texture": "mmzreborn:blocks/emerald_trapdoor"
+    }
+}

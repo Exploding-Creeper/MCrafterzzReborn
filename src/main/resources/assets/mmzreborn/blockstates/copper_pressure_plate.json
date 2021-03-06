@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mmzreborn:copper_pressure_plate_up" },
+        "powered=true": { "model": "mmzreborn:copper_pressure_plate_down" }
+    }
+}

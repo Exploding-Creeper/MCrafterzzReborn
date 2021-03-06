@@ -1,8 +1,0 @@
-{
-    "parent": "mm:block/bars_nsew",
-    "textures": {
-        "particle": "mm:blocks/diamond_bars",
-        "bars": "mm:blocks/diamond_bars",
-        "edge": "mm:blocks/diamond_bars"
-    }
-}

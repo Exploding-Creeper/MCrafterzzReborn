@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "powered=false": { "model": "mmzreborn:tin_pressure_plate_up" },
+        "powered=true": { "model": "mmzreborn:tin_pressure_plate_down" }
+    }
+}
+

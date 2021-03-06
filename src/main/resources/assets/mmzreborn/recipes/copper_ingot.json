@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_ingot",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:copper_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

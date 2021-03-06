@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:glowing_coloured_stone_bricks_black"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stonebrick",
+      "data": 0
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 0
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:amethyst_sword"
+    },
+    {
+      "item": "mmzreborn:amethyst_pickaxe"
+    },
+    {
+      "item": "mmzreborn:amethyst_axe"
+    },
+    {
+      "item": "mmzreborn:amethyst_shovel"
+    },
+    {
+      "item": "mmzreborn:amethyst_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

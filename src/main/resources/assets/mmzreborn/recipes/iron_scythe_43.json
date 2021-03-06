@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:iron_scythe"
+  },
+  "pattern": [
+    "III",
+    " SI",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  }
+}

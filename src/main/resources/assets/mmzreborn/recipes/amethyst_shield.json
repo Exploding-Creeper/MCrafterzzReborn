@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_shield"
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    " A "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mmzreborn:amethyst"
+    }
+  }
+}

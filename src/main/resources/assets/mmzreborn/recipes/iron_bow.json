@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:iron_bow"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

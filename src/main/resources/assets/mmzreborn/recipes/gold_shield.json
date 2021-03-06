@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:gold_shield"
+  },
+  "pattern": [
+    "GGG",
+    "GGG",
+    " G "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  }
+}

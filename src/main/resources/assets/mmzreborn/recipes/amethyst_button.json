@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:amethyst_button"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_button"
+    },
+    {
+      "item": "mmzreborn:amethyst"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

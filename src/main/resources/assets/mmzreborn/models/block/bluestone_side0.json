@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/bluestone_side",
+    "textures": {
+        "line": "mmzreborn:blocks/bluestone_dust_line0"
+    }
+}

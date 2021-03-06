@@ -1,6 +1,0 @@
-{
-    "parent": "mm:block/trapdoor_open",
-    "textures": {
-        "texture": "mm:blocks/stone_trapdoor"
-    }
-}

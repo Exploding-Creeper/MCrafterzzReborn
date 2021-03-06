@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:emerald_button"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_button"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

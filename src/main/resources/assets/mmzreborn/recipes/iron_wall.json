@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:iron_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

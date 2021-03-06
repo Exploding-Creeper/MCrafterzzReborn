@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:copper_sword"
+    },
+    {
+      "item": "mmzreborn:copper_pickaxe"
+    },
+    {
+      "item": "mmzreborn:copper_axe"
+    },
+    {
+      "item": "mmzreborn:copper_shovel"
+    },
+    {
+      "item": "mmzreborn:copper_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

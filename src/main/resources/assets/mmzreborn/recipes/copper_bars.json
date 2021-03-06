@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_bars"
+    },
+    {
+      "item": "mmzreborn:copper_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

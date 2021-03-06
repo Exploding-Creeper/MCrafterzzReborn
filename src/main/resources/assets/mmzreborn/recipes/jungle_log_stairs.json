@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mmzreborn:jungle_log_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:log",
+      "data": 4
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

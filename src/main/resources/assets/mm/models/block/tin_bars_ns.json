@@ -1,8 +1,0 @@
-{
-    "parent": "mm:block/bars_ns",
-    "textures": {
-        "particle": "mm:blocks/tin_bars",
-        "bars": "mm:blocks/tin_bars",
-        "edge": "mm:blocks/tin_bars"
-    }
-}

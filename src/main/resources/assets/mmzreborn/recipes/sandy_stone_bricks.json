@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mmzreborn:sandy_stone_bricks"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

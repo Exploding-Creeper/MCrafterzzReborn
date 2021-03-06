@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:seamless_birch_log_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:seamless_birch_log"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

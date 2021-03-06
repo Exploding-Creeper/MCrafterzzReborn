@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:diamond_bow"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

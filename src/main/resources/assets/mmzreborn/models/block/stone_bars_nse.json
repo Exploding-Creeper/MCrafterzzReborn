@@ -1,0 +1,8 @@
+{
+    "parent": "mmzreborn:block/bars_nse",
+    "textures": {
+        "particle": "mmzreborn:blocks/stone_bars",
+        "bars": "mmzreborn:blocks/stone_bars",
+        "edge": "mmzreborn:blocks/stone_bars"
+    }
+}

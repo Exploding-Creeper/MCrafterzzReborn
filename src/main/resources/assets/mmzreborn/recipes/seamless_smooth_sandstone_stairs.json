@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:seamless_smooth_sandstone_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:seamless_smooth_sandstone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:bronze_sword"
+  },
+  "pattern": [
+    "B  ",
+    "B  ",
+    "S  "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mmzreborn:bronze_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

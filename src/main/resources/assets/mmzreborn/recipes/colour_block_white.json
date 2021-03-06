@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "mmzreborn:colour_block_white",
+    "count": 4
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:tin_ingot"
+    },
+    {
+      "item": "mmzreborn:tin_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

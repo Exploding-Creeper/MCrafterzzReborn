@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_axe"
+  },
+  "pattern": [
+    " JJ",
+    " SJ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "J": {
+      "item": "mmzreborn:jade"
+    }
+  }
+}

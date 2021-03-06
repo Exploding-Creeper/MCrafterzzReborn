@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/button_inventory",
+    "textures": {
+        "texture": "blocks/gold_block"
+    }
+}

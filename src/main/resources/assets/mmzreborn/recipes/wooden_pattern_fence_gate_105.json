@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_pattern_fence_gate"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern"
+    },
+    {
+      "item": "minecraft:jungle_fence_gate"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

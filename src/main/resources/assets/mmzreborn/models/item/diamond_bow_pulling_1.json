@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:item/diamond_bow",
+    "textures": {
+        "layer0": "mmzreborn:items/diamond_bow_pulling_1"
+    }
+}

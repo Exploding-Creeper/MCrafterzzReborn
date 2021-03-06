@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:block/button_pressed",
+    "textures": {
+        "texture": "mmzreborn:blocks/bronze_block"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:seamless_dark_oak_log_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:seamless_dark_oak_log"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

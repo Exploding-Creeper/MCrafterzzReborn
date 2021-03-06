@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:tin_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_wall"
+    },
+    {
+      "item": "mmzreborn:tin_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

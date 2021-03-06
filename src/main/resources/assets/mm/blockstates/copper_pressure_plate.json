@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "powered=false": { "model": "mm:copper_pressure_plate_up" },
-        "powered=true": { "model": "mm:copper_pressure_plate_down" }
-    }
-}

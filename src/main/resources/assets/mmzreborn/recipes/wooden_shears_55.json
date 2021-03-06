@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_shears"
+  },
+  "pattern": [
+    "   ",
+    " W ",
+    "  W"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "W": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

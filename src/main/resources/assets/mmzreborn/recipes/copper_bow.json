@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:copper_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:copper_ingot"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

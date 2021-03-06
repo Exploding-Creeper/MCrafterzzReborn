@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:bronze_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "mmzreborn:bronze_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

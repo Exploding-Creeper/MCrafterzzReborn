@@ -1,0 +1,6 @@
+{
+    "parent": "mmzreborn:item/jade_bow",
+    "textures": {
+        "layer0": "mmzreborn:items/jade_bow_pulling_2"
+    }
+}

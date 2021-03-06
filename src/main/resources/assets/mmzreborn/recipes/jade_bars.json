@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_bars"
+    },
+    {
+      "item": "mmzreborn:jade"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

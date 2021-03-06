@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "mmzreborn:wooden_pattern",
+    "count": 16
+  },
+  "pattern": [
+    " WS",
+    " SW",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

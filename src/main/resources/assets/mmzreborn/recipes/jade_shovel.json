@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mmzreborn:jade_shovel"
+  },
+  "pattern": [
+    " J ",
+    " S ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "J": {
+      "item": "mmzreborn:jade"
+    }
+  }
+}

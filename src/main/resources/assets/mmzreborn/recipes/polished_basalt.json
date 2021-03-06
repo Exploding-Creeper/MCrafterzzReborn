@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "mmzreborn:polished_basalt",
+    "count": 9
+  },
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mmzreborn:basalt"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "mmzreborn:crusher" },
+        "facing=south": { "model": "mmzreborn:crusher", "y": 180 },
+        "facing=west":  { "model": "mmzreborn:crusher", "y": 270 },
+        "facing=east":  { "model": "mmzreborn:crusher", "y": 90 }
+    }
+}

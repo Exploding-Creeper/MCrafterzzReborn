@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "minecraft:stone_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mmzreborn:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:cobblestone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
