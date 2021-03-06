@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "mm:seamless_dark_oak_log",
+    "count": 4
+  },
+  "pattern": [
+    "   ",
+    " LL",
+    " LL"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "minecraft:log2",
+      "data": 1
+    }
+  }
+}

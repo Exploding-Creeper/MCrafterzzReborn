@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "mm:op_multitool"
+  },
+  "pattern": [
+    "MAM",
+    "ANA",
+    "MAM"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mm:amethyst_block"
+    },
+    "M": {
+      "item": "mm:amethyst_multitool"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  }
+}

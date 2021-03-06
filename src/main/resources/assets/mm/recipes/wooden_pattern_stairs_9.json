@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_stairs",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "mm:wooden_pattern_stairs"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

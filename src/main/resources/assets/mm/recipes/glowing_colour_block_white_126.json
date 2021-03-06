@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mm:glowing_colour_block_white"
+  },
+  "ingredients": [
+    {
+      "item": "mm:glowing_colour_block_pink"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

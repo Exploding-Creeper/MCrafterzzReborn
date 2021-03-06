@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraft:furnace"
+  },
+  "pattern": [
+    "SSS",
+    "S S",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stone",
+      "data": 4
+    }
+  }
+}

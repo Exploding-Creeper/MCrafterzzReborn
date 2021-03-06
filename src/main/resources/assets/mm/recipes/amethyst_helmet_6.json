@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:amethyst_helmet"
+  },
+  "pattern": [
+    "   ",
+    "AAA",
+    "A A"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mm:amethyst"
+    }
+  }
+}

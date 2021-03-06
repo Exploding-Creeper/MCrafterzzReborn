@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:bronze_hoe"
+  },
+  "pattern": [
+    "BB ",
+    "S  ",
+    "S  "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mm:bronze_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "mm:sandy_stone_bricks_wall"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

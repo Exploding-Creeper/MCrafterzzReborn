@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "mm:jade_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

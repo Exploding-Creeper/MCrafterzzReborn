@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:jade_sword"
+  },
+  "pattern": [
+    "  J",
+    "  J",
+    "  S"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "J": {
+      "item": "mm:jade"
+    }
+  }
+}

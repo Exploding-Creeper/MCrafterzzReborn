@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:copper_shovel"
+  },
+  "pattern": [
+    "C  ",
+    "S  ",
+    "S  "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "mm:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

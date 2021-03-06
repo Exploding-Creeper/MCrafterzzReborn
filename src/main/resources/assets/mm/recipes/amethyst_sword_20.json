@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:amethyst_sword"
+  },
+  "pattern": [
+    "  A",
+    "  A",
+    "  S"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mm:amethyst"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

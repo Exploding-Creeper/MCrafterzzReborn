@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "mm:colour_block_white"
+  },
+  "ingredients": [
+    {
+      "item": "mm:colour_block_red"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

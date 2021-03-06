@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:bronze_shears"
+  },
+  "pattern": [
+    "   ",
+    "B  ",
+    " B "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mm:bronze_ingot"
+    }
+  }
+}

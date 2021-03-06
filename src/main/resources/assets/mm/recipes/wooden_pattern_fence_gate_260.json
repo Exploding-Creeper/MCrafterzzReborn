@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_fence_gate"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "mm:nether_bricks_fence_gate"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

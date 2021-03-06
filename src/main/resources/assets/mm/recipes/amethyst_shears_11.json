@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:amethyst_shears"
+  },
+  "pattern": [
+    " A ",
+    "  A",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "mm:amethyst"
+    }
+  }
+}
