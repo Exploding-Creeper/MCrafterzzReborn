@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:lever_torch"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "minecraft:lever"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -115,7 +115,8 @@ public class ModBlocks {
     public static Block amethyst_button = new Button("amethyst_button", false, SoundType.METAL, "pickaxe", 3).setHardness(6.0F).setResistance(35.0F).setCreativeTab(ModTabs.creativeTabBuilding);
     public static Block emerald_button = new Button("emerald_button", false, SoundType.METAL, "pickaxe", 2).setHardness(5.0F).setResistance(30.0F).setCreativeTab(ModTabs.creativeTabBuilding);
     public static Block quartz_button = new Button("quartz_button", false, SoundType.METAL, "pickaxe", 0).setHardness(0.8F).setResistance(4.0F).setCreativeTab(ModTabs.creativeTabBuilding);
-
+    public static Block lever_torch = new TorchLever("lever_torch");
+    
     /**
      * Color Blocks
      */

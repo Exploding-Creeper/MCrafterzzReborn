@@ -133,6 +133,7 @@ tile.amethyst_pressure_plate.name=Amethyst Pressure Plate
 tile.jade_pressure_plate.name=Jade Pressure Plate
 tile.emerald_pressure_plate.name=Emerald Pressure Plate
 tile.quartz_pressure_plate.name=Quartz Pressure Plate
+tile.lever_torch.name=Torch Lever
 
 // Bars
 tile.stone_bars.name=Stone Bars
