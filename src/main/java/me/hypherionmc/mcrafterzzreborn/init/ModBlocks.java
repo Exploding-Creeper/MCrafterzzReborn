@@ -8,7 +8,6 @@ package me.hypherionmc.mcrafterzzreborn.init;
 
 import me.hypherionmc.mcrafterzzreborn.blocks.*;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
-import me.hypherionmc.mcrafterzzreborn.temp.RecipeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;

@@ -7,7 +7,6 @@
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModElementsSmallerBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
