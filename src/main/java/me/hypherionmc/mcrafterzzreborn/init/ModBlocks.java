@@ -41,10 +41,6 @@ public class ModBlocks {
     public static Block copper_block = new SimpleBlock("copper_block", Material.ROCK, SoundType.METAL, "pickaxe", 1, MapColor.RED).setCreativeTab(ModTabs.creativeTabBuilding).setHardness(5.0F).setResistance(30.0F);
     public static Block tin_block = new SimpleBlock("tin_block", Material.ROCK, SoundType.METAL, "pickaxe", 1, MapColor.IRON).setCreativeTab(ModTabs.creativeTabBuilding).setHardness(5.0F).setResistance(30.0F);
     public static Block bronze_block = new SimpleBlock("bronze_block", Material.ROCK, SoundType.METAL, "pickaxe", 2, MapColor.RED).setCreativeTab(ModTabs.creativeTabBuilding).setHardness(5.0F).setResistance(30.0F);
-    public static Block copper_door = new SimpleBlock("copper_door", Material.ROCK, SoundType.METAL, "pickaxe", 1, MapColor.RED).setHardness(5.0F).setResistance(30.0F);
-    public static Block tin_door = new SimpleBlock("tin_door", Material.ROCK, SoundType.METAL, "pickaxe", 1, MapColor.IRON).setHardness(5.0F).setResistance(30.0F);
-    public static Block bronze_door = new SimpleBlock("bronze_door", Material.ROCK, SoundType.METAL, "pickaxe", 2, MapColor.RED).setHardness(5.0F).setResistance(30.0F);
-    public static Block amethyst_door = new SimpleBlock("amethyst_door", Material.ROCK, SoundType.METAL, "pickaxe", 3, MapColor.PURPLE).setHardness(6.0F).setResistance(35.0F);
     public static Block glowing_barrier = new SimpleBlock("glowing_barrier", Material.BARRIER, SoundType.GLASS, "pickaxe", 0, true, 1.0F, true).setResistance(1.8E7F);
     public static Block glowing_air = (new GlowingAir("glowing_air", Material.BARRIER)).setResistance(1.8E7F).setCreativeTab(ModTabs.creativeTabMapMaking);
     public static Block block_of_death = (new DeathBlock("block_of_death", Material.ROCK)).setCreativeTab(ModTabs.creativeTabMapMaking).setResistance(10.0F).setHardness(5.0F);

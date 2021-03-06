@@ -42,10 +42,6 @@ public class ModItems {
     public static Item copper_ingot = new ModItem("copper_ingot").setCreativeTab(ModTabs.creativeTab);
     public static Item tin_ingot = new ModItem("tin_ingot").setCreativeTab(ModTabs.creativeTab);
     public static Item bronze_ingot = new ModItem("bronze_ingot").setCreativeTab(ModTabs.creativeTab);
-    public static Item copper_door_item = new ModItem("copper_door_item").setCreativeTab(ModTabs.creativeTabBuilding);
-    public static Item tin_door_item = new ModItem("tin_door_item").setCreativeTab(ModTabs.creativeTabBuilding);
-    public static Item bronze_door_item = new ModItem("bronze_door_item").setCreativeTab(ModTabs.creativeTabBuilding);
-    public static Item amethyst_door_item = new ModItem("amethyst_door_item").setCreativeTab(ModTabs.creativeTabBuilding);
     public static Item wooden_pattern = new ModItem("wooden_pattern").setCreativeTab(ModTabs.creativeTab);
     public static Item wooden_pattern_bars = new ModItem("wooden_pattern_bars").setCreativeTab(ModTabs.creativeTab);
     public static Item wooden_pattern_button = new ModItem("wooden_pattern_button").setCreativeTab(ModTabs.creativeTab);
