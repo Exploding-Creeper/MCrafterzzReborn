@@ -132,12 +132,12 @@ public class ModItems {
     public static Item jade_hoe = new Hoe("jade_hoe", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
     public static Item amethyst_hoe = new Hoe("amethyst_hoe", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
     
-    public static Item diamond_MultiTool = new MultiTool("diamond_MultiTool", Item.ToolMaterial.DIAMOND, Items.DIAMOND).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_MultiTool = new MultiTool("copper_MultiTool", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_MultiTool = new MultiTool("bronze_MultiTool", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_MultiTool = new MultiTool("jade_MultiTool", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_MultiTool = new MultiTool("amethyst_MultiTool", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item op_MultiTool = new MultiTool("op_MultiTool", opTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item diamond_multitool = new MultiTool("diamond_multitool", Item.ToolMaterial.DIAMOND, Items.DIAMOND).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item copper_multitool = new MultiTool("copper_multitool", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item bronze_multitool = new MultiTool("bronze_multitool", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item jade_multitool = new MultiTool("jade_multitool", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item amethyst_multitool = new MultiTool("amethyst_multitool", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static Item op_multitool = new MultiTool("op_multitool", opTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
     
     public static Item wooden_hammer = new Hammer("wooden_hammer", Item.ToolMaterial.WOOD, 59).setCreativeTab(ModTabs.creativeTabTools);
     public static Item stone_hammer = new Hammer("stone_hammer", Item.ToolMaterial.STONE, 132).setCreativeTab(ModTabs.creativeTabTools);
