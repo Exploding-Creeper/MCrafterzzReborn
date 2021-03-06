@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:diamond_shield"
+  },
+  "pattern": [
+    "DDD",
+    "DDD",
+    " D "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  }
+}

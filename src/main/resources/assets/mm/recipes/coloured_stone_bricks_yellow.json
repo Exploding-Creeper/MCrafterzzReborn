@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:coloured_stone_bricks_yellow"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stonebrick",
+      "data": 0
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 11
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

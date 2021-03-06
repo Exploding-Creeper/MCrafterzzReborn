@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:flint_and_amethyst"
+  },
+  "ingredients": [
+    {
+      "item": "mm:amethyst"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

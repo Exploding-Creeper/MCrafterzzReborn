@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:fence"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_fence"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

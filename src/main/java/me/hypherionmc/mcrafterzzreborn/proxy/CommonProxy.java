@@ -9,13 +9,8 @@ import me.hypherionmc.mcrafterzzreborn.commands.CommandMCrafterzzMod;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandSetBlocks;
 import me.hypherionmc.mcrafterzzreborn.commands.CommandTpDimension;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
-import me.hypherionmc.mcrafterzzreborn.handlers.event.ServerTickHandler;
 import me.hypherionmc.mcrafterzzreborn.handlers.registry.RegistryHandler;
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModElementsSmallerBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModElementsToolsArmour;
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import me.hypherionmc.mcrafterzzreborn.world.worldgen.ModFlowerGenerator;
 import me.hypherionmc.mcrafterzzreborn.world.worldgen.ModOreGenerator;
@@ -32,14 +27,7 @@ public class CommonProxy {
         MinecraftForge.EVENT_BUS.register(Config.instance);
         Config.init(event.getSuggestedConfigurationFile());
         Config.syncConfig();
-
-        ModItems.setupRepairItemForToolsAndArmour();
-
-        ModBlocks.crafting();
-
         RegistryHandler.registerEventHandlers();
-        ModElementsSmallerBlocks.crafting();
-        ModElementsToolsArmour.crafting();
     }
 
     public void init(FMLInitializationEvent event) {
@@ -54,6 +42,7 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event) {
         RegistryHandler.registerNetwork();
         RegistryHandler.removeCrafting();
+        ModItems.setupRepairItemForToolsAndArmour();
     }
 
     public void serverStart(FMLServerStartingEvent event) {

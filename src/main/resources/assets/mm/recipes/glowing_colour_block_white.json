@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:glowing_colour_block_white"
+  },
+  "ingredients": [
+    {
+      "item": "mm:colour_block_white"
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

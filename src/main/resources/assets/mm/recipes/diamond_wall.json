@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:diamond_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_wall"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

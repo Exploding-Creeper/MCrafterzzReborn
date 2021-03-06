@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:jade_chestplate"
+  },
+  "pattern": [
+    "J J",
+    "JJJ",
+    "JJJ"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "J": {
+      "item": "mm:jade"
+    }
+  }
+}

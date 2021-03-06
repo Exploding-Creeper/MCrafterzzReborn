@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mm:copper_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mm:copper_sword"
+    },
+    {
+      "item": "mm:copper_pickaxe"
+    },
+    {
+      "item": "mm:copper_axe"
+    },
+    {
+      "item": "mm:copper_shovel"
+    },
+    {
+      "item": "mm:copper_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

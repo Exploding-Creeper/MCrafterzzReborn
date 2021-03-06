@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:copper_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mm:copper_ingot"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:copper_button"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_button"
+    },
+    {
+      "item": "mm:copper_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

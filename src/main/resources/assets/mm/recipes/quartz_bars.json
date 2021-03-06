@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:quartz_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_bars"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:diamond_scythe"
+  },
+  "pattern": [
+    "DDD",
+    "DS ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  }
+}

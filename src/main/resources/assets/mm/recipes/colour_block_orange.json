@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:colour_block_orange"
+  },
+  "ingredients": [
+    {
+      "item": "mm:colour_block_white"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 14
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "minecraft:stone",
+    "data": 2,
+    "count": 9
+  },
+  "pattern": [
+    "GGG",
+    "GGG",
+    "GGG"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:stone",
+      "data": 1
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:seamless_dark_oak_log_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "mm:seamless_dark_oak_log"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

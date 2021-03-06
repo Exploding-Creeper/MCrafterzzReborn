@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:emerald_trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

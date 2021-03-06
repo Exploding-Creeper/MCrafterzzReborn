@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:gold_scythe"
+  },
+  "pattern": [
+    "GGG",
+    "GS ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  }
+}

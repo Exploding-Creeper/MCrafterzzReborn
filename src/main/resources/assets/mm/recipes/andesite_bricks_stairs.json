@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:andesite_bricks_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "mm:andesite_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "minecraft:cobblestone_wall",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

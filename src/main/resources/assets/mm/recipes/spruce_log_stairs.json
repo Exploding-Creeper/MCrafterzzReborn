@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:spruce_log_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:log",
+      "data": 1
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

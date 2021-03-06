@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:bronze_chestplate"
+  },
+  "pattern": [
+    "B B",
+    "BBB",
+    "BBB"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mm:bronze_ingot"
+    }
+  }
+}

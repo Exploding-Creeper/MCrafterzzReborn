@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:bronze_shield"
+  },
+  "pattern": [
+    "BBB",
+    "BBB",
+    " B "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "mm:bronze_ingot"
+    }
+  }
+}

@@ -3,9 +3,9 @@
     "item": "mm:copper_shears"
   },
   "pattern": [
-    "   ",
-    "C  ",
-    " C "
+    " C ",
+    "  C",
+    "   "
   ],
   "type": "minecraft:crafting_shaped",
   "key": {

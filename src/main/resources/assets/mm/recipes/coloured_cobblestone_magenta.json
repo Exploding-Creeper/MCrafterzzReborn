@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:coloured_cobblestone_magenta"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 13
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:wooden_pattern_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

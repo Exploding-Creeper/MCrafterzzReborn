@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "mm:bronze_multitool"
+  },
+  "ingredients": [
+    {
+      "item": "mm:bronze_sword"
+    },
+    {
+      "item": "mm:bronze_pickaxe"
+    },
+    {
+      "item": "mm:bronze_axe"
+    },
+    {
+      "item": "mm:bronze_shovel"
+    },
+    {
+      "item": "mm:bronze_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

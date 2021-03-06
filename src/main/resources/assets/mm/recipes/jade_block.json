@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "mm:jade_block"
+  },
+  "pattern": [
+    "JJJ",
+    "JJJ",
+    "JJJ"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "J": {
+      "item": "mm:jade"
+    }
+  }
+}

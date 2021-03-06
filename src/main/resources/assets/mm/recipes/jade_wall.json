@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:jade_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_wall"
+    },
+    {
+      "item": "mm:jade"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

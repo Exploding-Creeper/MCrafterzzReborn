@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:bronze_bars"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_bars"
+    },
+    {
+      "item": "mm:bronze_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

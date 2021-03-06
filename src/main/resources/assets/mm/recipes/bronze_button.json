@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:bronze_button"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_button"
+    },
+    {
+      "item": "mm:bronze_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

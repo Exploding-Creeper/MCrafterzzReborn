@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:gold_button"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_button"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

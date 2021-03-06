@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:copper_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "mm:copper_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

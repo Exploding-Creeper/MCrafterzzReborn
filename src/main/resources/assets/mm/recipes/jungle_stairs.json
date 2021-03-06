@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:jungle_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 3
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

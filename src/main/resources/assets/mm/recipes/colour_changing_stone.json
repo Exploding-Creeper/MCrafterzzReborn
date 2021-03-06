@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "mm:colour_changing_stone"
+  },
+  "pattern": [
+    " D ",
+    "DSD",
+    " D "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stone",
+      "data": 0
+    },
+    "D": {
+      "item": "minecraft:dye",
+      "data": 0
+    }
+  }
+}

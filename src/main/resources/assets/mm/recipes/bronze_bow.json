@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:bronze_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mm:bronze_ingot"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

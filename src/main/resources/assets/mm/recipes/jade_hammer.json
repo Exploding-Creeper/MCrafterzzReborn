@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "mm:jade_hammer"
+  },
+  "pattern": [
+    "JJJ",
+    "JJJ",
+    " S "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "J": {
+      "item": "mm:jade"
+    }
+  }
+}

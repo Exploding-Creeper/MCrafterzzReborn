@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:bronze_trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "mm:bronze_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

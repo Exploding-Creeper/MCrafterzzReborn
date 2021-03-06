@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:glowing_colour_block_gray"
+  },
+  "ingredients": [
+    {
+      "item": "mm:glowing_colour_block_white"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 8
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

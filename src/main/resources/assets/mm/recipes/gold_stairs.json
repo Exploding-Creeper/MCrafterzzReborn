@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:gold_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:gold_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

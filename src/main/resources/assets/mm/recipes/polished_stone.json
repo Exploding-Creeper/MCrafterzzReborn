@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "mm:polished_stone",
+    "count": 9
+  },
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  }
+}

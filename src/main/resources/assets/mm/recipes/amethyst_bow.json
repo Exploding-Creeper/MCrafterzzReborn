@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:amethyst_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mm:amethyst"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

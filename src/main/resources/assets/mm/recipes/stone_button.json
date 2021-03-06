@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:stone_button"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_button"
+    },
+    {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

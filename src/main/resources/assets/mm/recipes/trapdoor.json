@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

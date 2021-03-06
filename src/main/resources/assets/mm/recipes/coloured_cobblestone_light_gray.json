@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "mm:coloured_cobblestone_light_gray"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 7
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

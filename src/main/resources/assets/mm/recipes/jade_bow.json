@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:jade_bow"
+  },
+  "ingredients": [
+    {
+      "item": "mm:jade"
+    },
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

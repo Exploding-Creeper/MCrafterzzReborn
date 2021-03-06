@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:red_sandstone_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:red_sandstone",
+      "data": 0
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

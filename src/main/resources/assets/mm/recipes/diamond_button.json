@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:diamond_button"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_button"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

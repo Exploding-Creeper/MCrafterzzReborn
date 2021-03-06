@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:dark_oak_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 5
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

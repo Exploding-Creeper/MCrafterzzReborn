@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:tin_wall"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_wall"
+    },
+    {
+      "item": "mm:tin_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

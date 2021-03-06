@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:tin_trapdoor"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_trapdoor"
+    },
+    {
+      "item": "mm:tin_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "minecraft:nether_brick_stairs"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_stairs"
+    },
+    {
+      "item": "minecraft:nether_brick"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

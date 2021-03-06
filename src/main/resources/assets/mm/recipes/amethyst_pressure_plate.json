@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "mm:amethyst_pressure_plate"
+  },
+  "ingredients": [
+    {
+      "item": "mm:wooden_pattern_pressure_plate"
+    },
+    {
+      "item": "mm:amethyst"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
