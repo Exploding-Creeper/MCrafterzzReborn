@@ -6,16 +6,22 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class GlowingColorBlock extends ColorBlock {
 
-    public GlowingColorBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
+    public GlowingColorBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, MaterialColor mapColour) {
         super(name, material, stepSound, tool, toolLevel, mapColour);
-        this.setLightLevel(1.0F);
+
     }
 
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 15;
+    }
 }

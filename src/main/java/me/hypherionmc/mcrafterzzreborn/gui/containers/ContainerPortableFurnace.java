@@ -8,13 +8,16 @@ package me.hypherionmc.mcrafterzzreborn.gui.containers;
 
 import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.*;
+import net.minecraft.client.gui.screen.inventory.FurnaceScreen;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.IContainerListener;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.util.datafix.fixes.FurnaceRecipes;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nonnull;
 
@@ -26,37 +29,34 @@ public class ContainerPortableFurnace extends Container {
     private int furnaceBurnTime;
     private int currentItemBurnTime;
 
-    public ContainerPortableFurnace(InventoryPlayer playerInventory, PortableFurnaceMachine furnaceInventory)
+    public ContainerPortableFurnace(PlayerInventory playerInventory, PortableFurnaceMachine furnaceInventory)
     {
+        super();
+        FurnaceScreen
         this.tileFurnace = furnaceInventory;
-        this.addSlotToContainer(new Slot(furnaceInventory, 0, 56, 17));
-        this.addSlotToContainer(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
+        this.addSlot(new Slot(furnaceInventory, 0, 56, 17));
+        this.addSlot(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
+        this.addSlot(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
 
         for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 9; ++j)
             {
-                this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
         for (int k = 0; k < 9; ++k)
         {
-            this.addSlotToContainer(new Slot(playerInventory, k, 8 + k * 18, 142));
+            this.addSlot(new Slot(playerInventory, k, 8 + k * 18, 142));
         }
-    }
-
-    @Override
-    public boolean canInteractWith(EntityPlayer playerIn) {
-        return true;
     }
 
     @Override
     public void addListener(IContainerListener listener)
     {
         super.addListener(listener);
-        listener.sendAllWindowProperties(this, this.tileFurnace);
+        listener.sendAllContents(this, this.tileFurnace);
     }
 
     public void detectAndSendChanges()
@@ -94,15 +94,20 @@ public class ContainerPortableFurnace extends Container {
         this.totalCookTime = this.tileFurnace.getField(3);
     }
 
-    @SideOnly(Side.CLIENT)
+    @OnlyIn(Dist.CLIENT)
     public void updateProgressBar(int id, int data)
     {
         this.tileFurnace.setField(id, data);
     }
 
+    @Override
+    public boolean canInteractWith(PlayerEntity playerIn) {
+        return true;
+    }
+
     @Nonnull
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
+    public ItemStack transferStackInSlot(PlayerEntity playerIn, int index)
     {
         ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
@@ -175,7 +180,7 @@ public class ContainerPortableFurnace extends Container {
     }
 
     @Override
-    public void onContainerClosed(EntityPlayer playerIn) {
+    public void onContainerClosed(PlayerEntity playerIn) {
 
         if (!playerIn.getEntityWorld().isRemote) {
             WorldSaveManager.getInstance().markDirty();

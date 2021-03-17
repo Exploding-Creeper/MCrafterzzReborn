@@ -14,8 +14,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.IItemPropertyGetter;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemShield;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ShieldItem;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -30,21 +32,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class Shield extends ItemShield {
+public class Shield extends ShieldItem {
 
     public String name;
-    public CreativeTabs tab;
+    public ItemGroup tab;
 
-    public Shield(int durability, String name, CreativeTabs tab) {
-        this.setMaxDamage(durability);
+    public Shield(int durability, String name, ItemGroup tab) {
+        super(new Properties().maxDamage(durability));
         this.name = name;
         this.tab = tab;
-        // Added exception for Event Handler
-        if (!name.isEmpty()) {
-            this.setRegistryName(name);
-            this.setTranslationKey(name);
-            ModItems.ITEMS.add(this);
-        }
 
         this.addPropertyOverride(new ResourceLocation("blocking"), new IItemPropertyGetter() {
 

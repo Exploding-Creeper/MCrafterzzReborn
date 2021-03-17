@@ -7,11 +7,11 @@
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class MapMakingTab extends CreativeTabs {
+public class MapMakingTab extends ItemGroup {
 
     public MapMakingTab(String label) {
         super(label);

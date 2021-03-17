@@ -10,9 +10,11 @@ import me.hypherionmc.mcrafterzzreborn.init.ModTabs;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -54,20 +56,15 @@ public class PortableFurnace extends ModItem {
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-
-        if (!worldIn.isRemote) {
-            if (!stack.hasTagCompound()) {
-                stack.setTagCompound(new NBTTagCompound());
-                stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
-            } else {
-                if (!stack.getTagCompound().hasKey(MACHINE_TAG)) {
-                    stack.getTagCompound().setInteger(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
-                }
+    public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
+        if (!stack.hasTag()) {
+            stack.setTag(new CompoundNBT());
+            stack.getTag().putInt(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
+        } else {
+            if (!stack.getTag().contains(MACHINE_TAG)) {
+                stack.getTag().putInt(MACHINE_TAG, WorldSaveManager.getInstance().createFurnace());
             }
-
         }
-
+        return true;
     }
-
 }

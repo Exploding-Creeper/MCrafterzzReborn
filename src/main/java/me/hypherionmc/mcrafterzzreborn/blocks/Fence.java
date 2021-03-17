@@ -6,25 +6,17 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.block.BlockFence;
+import net.minecraft.block.FenceBlock;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraftforge.common.ToolType;
 
-public class Fence extends BlockFence {
+public class Fence extends FenceBlock {
 
-
-    public Fence(String name, Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
-        super(material, mapColour);
-        this.setSoundType(stepSound);
-        this.setHarvestLevel(tool, toolLevel);
+    public Fence(String name, Material material, SoundType stepSound, String tool, int toolLevel, MaterialColor mapColour) {
+        super(Properties.create(material, mapColour).sound(stepSound).harvestTool(ToolType.get(tool)).harvestLevel(toolLevel));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 }

@@ -6,22 +6,16 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.block.BlockStairs;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemBlock;
 
-public class ModStairs extends BlockStairs {
+public class ModStairs extends StairsBlock {
 
-    public ModStairs(String name, IBlockState modelState, Material material) {
-        super(modelState);
+    public ModStairs(String name, BlockState modelState, Material material) {
+        super(modelState, Properties.create(material));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
 }

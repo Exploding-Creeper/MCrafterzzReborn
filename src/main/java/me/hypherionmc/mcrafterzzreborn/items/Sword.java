@@ -11,8 +11,9 @@ import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.item.SwordItem;
 
-public class Sword extends ItemSword {
+public class Sword extends SwordItem {
 
     public Item repairItem;
 

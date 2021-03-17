@@ -6,28 +6,20 @@
 package me.hypherionmc.mcrafterzzreborn;
 
 import me.hypherionmc.mcrafterzzreborn.proxy.CommonProxy;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-@Mod(
-        modid = ModConstants.MODID,
-        guiFactory = ModConstants.GUI_FACTORY,
-        updateJSON = ModConstants.UPDATE_URL,
-        acceptedMinecraftVersions = ModConstants.MINECRAFT_VERSIONS
-)
+@Mod(ModConstants.MODID)
 public class MCrafterzz {
 
-    @Mod.Instance
-    public static MCrafterzz instance;
-
     public static Logger logger = LogManager.getLogger(ModConstants.MODID);
+
+    public MCrafterzz() {
+
+    }
 
     @SidedProxy(clientSide = ModConstants.CLIENT_PROXY, serverSide = ModConstants.COMMON_PROXY)
     public static CommonProxy proxy;

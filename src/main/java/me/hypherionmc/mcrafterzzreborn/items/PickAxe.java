@@ -6,23 +6,20 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.PickaxeItem;
 
-public class PickAxe extends ItemPickaxe {
+public class PickAxe extends PickaxeItem {
 
     public Item repairItem;
 
-    public PickAxe(String name, ToolMaterial material, Item repairItem) {
-        super(material);
+    public PickAxe(String name, ItemTier material, Item repairItem) {
+        super(material, (int) material.getAttackDamage(), 1, new Properties());
         this.repairItem = repairItem;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override

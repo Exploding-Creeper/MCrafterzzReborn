@@ -7,10 +7,10 @@
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class ToolsTab extends CreativeTabs {
+public class ToolsTab extends ItemGroup {
 
     public ToolsTab(String label) {
         super(label);

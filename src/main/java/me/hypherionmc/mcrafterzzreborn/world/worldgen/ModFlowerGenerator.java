@@ -9,15 +9,10 @@ package me.hypherionmc.mcrafterzzreborn.world.worldgen;
 import me.hypherionmc.mcrafterzzreborn.config.Config;
 import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
+
 
 import java.util.Random;
 

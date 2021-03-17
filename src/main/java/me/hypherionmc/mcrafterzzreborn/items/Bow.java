@@ -6,30 +6,20 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.IItemPropertyGetter;
+import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Bow extends ItemBow {
+public class Bow extends BowItem {
 
     public Item repairItem;
 
     public Bow(String name, int durability, Item repairItem) {
-        this.maxStackSize = 1;
-        this.setMaxDamage(durability);
+        super(new Properties().maxStackSize(1).maxDamage(durability));
         this.repairItem = repairItem;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
+        /*this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
 
             @SideOnly(Side.CLIENT)
             public float apply(ItemStack stack, World worldIn, EntityLivingBase entityIn) {
@@ -49,9 +39,8 @@ public class Bow extends ItemBow {
                 return entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack ? 1.0F : 0.0F;
             }
 
-        });
+        });*/
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override

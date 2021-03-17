@@ -6,19 +6,15 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.block.BlockBush;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.block.BushBlock;
+import net.minecraft.block.material.Material;
 
-public class Flower extends BlockBush {
+public class Flower extends BushBlock {
 
     public Flower(String name) {
+        super(Properties.create(Material.PLANTS));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
 }

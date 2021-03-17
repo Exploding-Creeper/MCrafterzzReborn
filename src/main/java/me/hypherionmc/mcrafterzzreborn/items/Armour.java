@@ -6,24 +6,21 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class Armour extends ItemArmor {
+public class Armour extends ArmorItem {
 
     public Item repairItem;
 
-    public Armour(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, Item repairItem) {
-        super(materialIn, renderIndexIn, equipmentSlotIn);
+    public Armour(String name, ArmorMaterial materialIn, int renderIndexIn, EquipmentSlotType equipmentSlotIn, Item repairItem) {
+        super(materialIn, equipmentSlotIn, new Properties());
         this.repairItem = repairItem;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override

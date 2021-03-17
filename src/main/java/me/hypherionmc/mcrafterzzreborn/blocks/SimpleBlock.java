@@ -6,92 +6,55 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.extensions.IForgeBlockState;
 
 public class SimpleBlock extends Block {
     public boolean transparent;
 
-    public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, MapColor mapColour) {
-        super(material, mapColour);
-        this.setSoundType(stepSound);
-        this.setHarvestLevel(tool, toolLevel);
+    public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, MaterialColor mapColour) {
+        super(Properties.create(material, mapColour).sound(stepSound).harvestTool(ToolType.get(tool)).harvestLevel(toolLevel));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
 
     }
 
     public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, boolean unbreakeble) {
-        super(material);
-        this.setSoundType(stepSound);
-        this.setHarvestLevel(tool, toolLevel);
+        super(Properties.create(material).sound(stepSound).harvestTool(ToolType.get(tool)).harvestLevel(toolLevel));
         if (unbreakeble) {
-            this.setBlockUnbreakable();
+            //this.setBlockUnbreakable();
         }
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
 
     }
 
-    public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, boolean transparent, MapColor mapColour) {
-        super(material, mapColour);
-        this.setSoundType(stepSound);
-        this.setHarvestLevel(tool, toolLevel);
-        this.setLightOpacity(1);
+    public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, boolean transparent, MaterialColor mapColour) {
+        super(Properties.create(material, mapColour).sound(stepSound).harvestTool(ToolType.get(tool)).harvestLevel(toolLevel).setOpaque(IForgeBlockState::isAir));
         this.transparent = transparent;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
-    public SimpleBlock(String name, Material material, SoundType stepSound, boolean transparent, MapColor mapColour) {
-        super(material, mapColour);
-        this.setSoundType(stepSound);
-        this.setLightOpacity(1);
+    public SimpleBlock(String name, Material material, SoundType stepSound, boolean transparent, MaterialColor mapColour) {
+        super(Properties.create(material, mapColour).sound(stepSound).setOpaque(IForgeBlockState::isAir));
         this.transparent = transparent;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
     public SimpleBlock(String name, Material material, SoundType stepSound, String tool, int toolLevel, boolean unbreakeble, float glowing, boolean transparent) {
-        super(material);
-        this.setSoundType(stepSound);
-        this.setHarvestLevel(tool, toolLevel);
-        this.setLightOpacity(1);
+        super(Properties.create(material).sound(stepSound).harvestTool(ToolType.get(tool)).harvestLevel(toolLevel)/*.setLightLevel(1)*/);
         if (unbreakeble) {
-            this.setBlockUnbreakable();
+            //this.setBlockUnbreakable();
         }
-
-        this.setLightLevel(glowing);
         this.transparent = transparent;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
     @Override
     public BlockRenderLayer getRenderLayer() {
         return this.transparent ? BlockRenderLayer.CUTOUT : BlockRenderLayer.SOLID;
@@ -100,5 +63,5 @@ public class SimpleBlock extends Block {
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return !this.transparent;
-    }
+    }*/
 }

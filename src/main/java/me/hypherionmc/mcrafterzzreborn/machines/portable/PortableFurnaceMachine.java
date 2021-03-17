@@ -10,22 +10,14 @@ import me.hypherionmc.mcrafterzzreborn.gui.containers.ContainerPortableFurnace;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.*;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
@@ -47,7 +39,7 @@ public class PortableFurnaceMachine implements IInventory {
         this.machineID = machineID;
     }
 
-    public PortableFurnaceMachine(NBTTagCompound compound) {
+    public PortableFurnaceMachine(CompoundNBT compound) {
         this.readFromNBT(compound);
     }
 
@@ -202,7 +194,7 @@ public class PortableFurnaceMachine implements IInventory {
         return new TextComponentTranslation("container.portable_furnace.name");
     }
 
-    public void readFromNBT(NBTTagCompound compound)
+    public void readFromNBT(CompoundNBT compound)
     {
         this.furnaceItemStacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
         ItemStackHelper.loadAllItems(compound, this.furnaceItemStacks);
@@ -213,7 +205,7 @@ public class PortableFurnaceMachine implements IInventory {
         this.setMachineID(compound.getInteger("FurnaceID"));
     }
 
-    public NBTTagCompound writeToNBT(NBTTagCompound compound)
+    public CompoundNBT writeToNBT(CompoundNBT compound)
     {
         compound.setInteger("BurnTime", (short)this.furnaceBurnTime);
         compound.setInteger("CookTime", (short)this.cookTime);
@@ -235,16 +227,16 @@ public class PortableFurnaceMachine implements IInventory {
     }
 
     @Override
-    public boolean isUsableByPlayer(EntityPlayer player) {
+    public boolean isUsableByPlayer(PlayerEntity player) {
         return true;
     }
 
     @Override
-    public void openInventory(EntityPlayer player) {
+    public void openInventory(PlayerEntity player) {
     }
 
     @Override
-    public void closeInventory(EntityPlayer player) {
+    public void closeInventory(PlayerEntity player) {
     }
 
     public boolean isBurning()

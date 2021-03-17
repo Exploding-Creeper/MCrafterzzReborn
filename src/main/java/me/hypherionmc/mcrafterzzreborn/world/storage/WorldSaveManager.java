@@ -7,13 +7,12 @@
 package me.hypherionmc.mcrafterzzreborn.world.storage;
 
 import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.world.World;
-import net.minecraft.world.storage.MapStorage;
 import net.minecraft.world.storage.WorldSavedData;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,17 +32,17 @@ public class WorldSaveManager extends WorldSavedData {
         super(name);
     }
 
-    public WorldSaveManager(String name, NBTTagCompound compound) {
+    public WorldSaveManager(String name, CompoundNBT compound) {
         super(name);
-        this.readFromNBT(compound);
+        this.read(compound);
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound nbt) {
-        NBTTagList list = nbt.getTagList(PORTABLE_FURNACE, 10);
+    public void read(CompoundNBT nbt) {
+        ListNBT list = nbt.getList(PORTABLE_FURNACE, 10);
 
-        for (int i = 0; i < list.tagCount(); i++) {
-            portableFurnaces.add(new PortableFurnaceMachine(list.getCompoundTagAt(i)));
+        for (int i = 0; i < list.size(); i++) {
+            portableFurnaces.add(new PortableFurnaceMachine(list.getCompound(i)));
         }
 
         if (portableFurnaces.size() != 0) {
@@ -61,16 +60,16 @@ public class WorldSaveManager extends WorldSavedData {
     }
 
     @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        NBTTagList furnaces = new NBTTagList();
+    public CompoundNBT write(CompoundNBT compound) {
+        ListNBT furnaces = new ListNBT();
 
         for (PortableFurnaceMachine machine : portableFurnaces) {
-            NBTTagCompound compound1 = new NBTTagCompound();
+            CompoundNBT compound1 = new CompoundNBT();
             machine.writeToNBT(compound1);
-            furnaces.appendTag(compound1);
+            furnaces.add(compound1);
         }
 
-        compound.setTag(PORTABLE_FURNACE, furnaces);
+        compound.put(PORTABLE_FURNACE, furnaces);
         return compound;
     }
 
@@ -114,7 +113,7 @@ public class WorldSaveManager extends WorldSavedData {
     }
 
     public static void setInstance(World world) {
-        MapStorage storage = world.getMapStorage();
+        Storage storage = world.get();
         WorldSaveManager result = (WorldSaveManager)storage.getOrLoadData(WorldSaveManager.class, "mmreborn");
         if (result == null) {
             result = new WorldSaveManager("mmreborn");
@@ -124,7 +123,7 @@ public class WorldSaveManager extends WorldSavedData {
         INSTANCE = result;
     }
 
-    @SideOnly(Side.CLIENT)
+    @OnlyIn(Dist.CLIENT)
     public static void setInstance() {
         INSTANCE = new WorldSaveManager("mmreborn");
     }
@@ -133,8 +132,8 @@ public class WorldSaveManager extends WorldSavedData {
         return INSTANCE;
     }
 
-    @SideOnly(Side.CLIENT)
-    public static void setFurnaceNBT(NBTTagCompound nbt) {
+    @OnlyIn(Dist.CLIENT)
+    public static void setFurnaceNBT(CompoundNBT nbt) {
         PortableFurnaceMachine furnace = new PortableFurnaceMachine();
         furnace.readFromNBT(nbt);
         if (getInstance().getFurnaceMachine(furnace.getMachineID()) == null) {

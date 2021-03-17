@@ -6,25 +6,22 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
 
-public class Hoe extends ItemHoe {
+public class Hoe extends HoeItem {
 
     // THE TOOL, NOT MY CHEATING EX
 
     public Item repairItem;
 
-    public Hoe(String name, ToolMaterial material, Item repairItem) {
-        super(material);
+    public Hoe(String name, ItemTier material, Item repairItem) {
+        super(material, (int) material.getAttackDamage(), 1.0f, new Properties());
         this.repairItem = repairItem;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override

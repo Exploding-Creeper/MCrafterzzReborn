@@ -6,18 +6,13 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.item.ItemFlintAndSteel;
+import net.minecraft.item.FlintAndSteelItem;
 
-public class FlintAndIngot extends ItemFlintAndSteel {
+public class FlintAndIngot extends FlintAndSteelItem {
 
     public FlintAndIngot(String name, int durabillity) {
-        this.setMaxDamage(durabillity);
+        super(new Properties().maxDamage(durabillity));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-
-        ModItems.ITEMS.add(this);
 
     }
 }

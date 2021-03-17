@@ -10,10 +10,10 @@ import me.hypherionmc.mcrafterzzreborn.network.NetworkHandler;
 import me.hypherionmc.mcrafterzzreborn.network.packets.WorldSavePacket;
 import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.network.PacketDistributor;
 
 import java.util.List;
 
@@ -26,14 +26,14 @@ public class ServerTickHandler {
 
             List<PortableFurnaceMachine> portableFurnaceMachines = WorldSaveManager.portableFurnaces;
 
-            NBTTagCompound compound;
+            CompoundNBT compound;
             for (PortableFurnaceMachine machine : portableFurnaceMachines) {
                 machine.update();
-                compound = new NBTTagCompound();
+                compound = new CompoundNBT();
                 machine.writeToNBT(compound);
 
                 if (FMLCommonHandler.instance().getMinecraftServerInstance().getCurrentPlayerCount() != 0) {
-                    NetworkHandler.network.sendToAll(new WorldSavePacket(compound));
+                    NetworkHandler.network.send(PacketDistributor.PLAYER.noArg(), new WorldSavePacket(compound));
                 }
             }
         }

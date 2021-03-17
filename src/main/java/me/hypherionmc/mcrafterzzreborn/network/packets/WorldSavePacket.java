@@ -6,55 +6,39 @@
 
 package me.hypherionmc.mcrafterzzreborn.network.packets;
 
-import io.netty.buffer.ByteBuf;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import net.minecraft.client.Minecraft;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.network.ByteBufUtils;
-import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
-import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
-import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.PacketBuffer;
+import net.minecraftforge.fml.network.NetworkEvent;
 
-public class WorldSavePacket implements IMessage {
+import java.util.function.Supplier;
 
-    private NBTTagCompound nbtTagCompound;
 
-    public WorldSavePacket() {
+public class WorldSavePacket {
+
+    private CompoundNBT nbtTagCompound;
+
+    public WorldSavePacket(PacketBuffer buffer) {
+        nbtTagCompound = buffer.readCompoundTag();
     }
 
-    public WorldSavePacket(NBTTagCompound compound) {
+    public WorldSavePacket(CompoundNBT compound) {
         this.nbtTagCompound = compound;
     }
 
-    @Override
-    public void fromBytes(ByteBuf buf) {
-        this.nbtTagCompound = ByteBufUtils.readTag(buf);
+    public void toBytes(PacketBuffer buf) {
+        buf.writeCompoundTag(nbtTagCompound);
     }
 
-    @Override
-    public void toBytes(ByteBuf buf) {
-        ByteBufUtils.writeTag(buf, nbtTagCompound);
-    }
-
-    public void execute(MessageContext ctx) {
-        if (ctx.side == Side.CLIENT && !Minecraft.getMinecraft().isSingleplayer()) {
+    public boolean handle(Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().enqueueWork(() -> {
             if (WorldSaveManager.getInstance() != null) {
                 WorldSaveManager.setFurnaceNBT(nbtTagCompound);
             } else {
                 WorldSaveManager.setInstance();
                 WorldSaveManager.setFurnaceNBT(nbtTagCompound);
             }
-        }
-    }
-
-    public static class Handler implements IMessageHandler<WorldSavePacket, IMessage> {
-
-        public Handler() { }
-
-        public IMessage onMessage(WorldSavePacket packet, MessageContext context) {
-            packet.execute(context);
-            return null;
-        }
+        });
+        return true;
     }
 }

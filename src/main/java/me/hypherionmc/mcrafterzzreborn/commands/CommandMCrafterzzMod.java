@@ -6,45 +6,45 @@
 
 package me.hypherionmc.mcrafterzzreborn.commands;
 
-import net.minecraft.command.CommandBase;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.command.CommandException;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.Commands;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.text.Color;
 import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
-public class CommandMCrafterzzMod extends CommandBase {
+public class CommandMCrafterzzMod  {
 
+    public static void register(CommandDispatcher<CommandSource> dispatcher) {
 
-    @Override
-    public String getName() {
-        return "mmzreborn";
+        LiteralArgumentBuilder<CommandSource> mmzreborn = Commands.literal("mmzreborn")
+                .requires((commandSource) -> commandSource.hasPermissionLevel(1))
+                .then(Commands.literal("").executes(CommandMCrafterzzMod::execute));
+        dispatcher.register(mmzreborn);
     }
 
-    @Override
-    public String getUsage(ICommandSender sender) {
-        return "mmzreborn";
-    }
-
-    @Override
-    public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        if (sender instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer)sender;
-            Style red = (new Style()).setColor(TextFormatting.DARK_RED);
-            Style green = (new Style()).setColor(TextFormatting.DARK_GREEN);
-            Style blue = (new Style()).setColor(TextFormatting.DARK_BLUE);
-            Style aqua = (new Style()).setColor(TextFormatting.DARK_AQUA);
-            Style purple = (new Style()).setColor(TextFormatting.DARK_PURPLE);
-            Style yellow = (new Style()).setColor(TextFormatting.YELLOW);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.name", new Object[0])).setStyle(red), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.modid", new Object[0])).setStyle(green), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.version", new Object[0])).setStyle(blue), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.minecraftversion", new Object[0])).setStyle(aqua), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.creator", new Object[0])).setStyle(purple), false);
-            player.sendStatusMessage((new TextComponentTranslation("commands.mmzreborn.updatepage", new Object[0])).setStyle(yellow), false);
+    public static int execute(CommandContext<CommandSource> ctx) throws CommandException {
+        if (ctx.getSource().getEntity() instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity)ctx.getSource().getEntity();
+            Style red = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.DARK_RED));
+            Style green = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.DARK_GREEN));
+            Style blue = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.DARK_BLUE));
+            Style aqua = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.DARK_AQUA));
+            Style purple = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.DARK_PURPLE));
+            Style yellow = Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.YELLOW));
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.name", new Object[0])).setStyle(red), false);
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.modid", new Object[0])).setStyle(green), false);
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.version", new Object[0])).setStyle(blue), false);
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.minecraftversion", new Object[0])).setStyle(aqua), false);
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.creator", new Object[0])).setStyle(purple), false);
+            player.sendStatusMessage((new TranslationTextComponent("commands.mmzreborn.updatepage", new Object[0])).setStyle(yellow), false);
         }
+        return 1;
     }
 
 }

@@ -6,13 +6,13 @@
 
 package me.hypherionmc.mcrafterzzreborn.gui;
 
+import me.hypherionmc.mcrafterzzreborn.gui.containers.ContainerPortableFurnace;
 import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.client.gui.screen.inventory.AbstractFurnaceScreen;
+import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiPortableFurnace extends GuiContainer {
+public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableFurnace> {
 
     private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
     /** The player inventory bound to this GUI. */

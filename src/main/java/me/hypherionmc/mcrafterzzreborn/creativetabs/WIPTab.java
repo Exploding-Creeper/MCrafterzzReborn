@@ -7,11 +7,11 @@
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class WIPTab extends CreativeTabs {
+public class WIPTab extends ItemGroup {
 
     public WIPTab(String label) {
         super(label);

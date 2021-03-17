@@ -6,16 +6,14 @@
 
 package me.hypherionmc.mcrafterzzreborn.config;
 
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.io.File;
 
 public class Config {
 
     public static Config instance = new Config();
-    public static Configuration config;
+    //public static Configuration config;
 
     public static boolean spawn_flowers = true;
     public static boolean spawn_tin = true;

@@ -9,38 +9,42 @@ package me.hypherionmc.mcrafterzzreborn.items;
 import me.hypherionmc.mcrafterzzreborn.ModConstants;
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
 import net.minecraft.item.ItemTool;
+import net.minecraft.item.ToolItem;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 import java.util.Collections;
 
-public class Hammer extends ItemTool {
+public class Hammer extends ToolItem {
 
     public static float attack_speed = -2.8F;
     public static float damage = 3.0F;
 
-    public Hammer(String name, ToolMaterial toolMaterial, int durabillity) {
-        super(damage, attack_speed, toolMaterial, Collections.emptySet());
-        this.setHarvestLevel("pickaxe", toolMaterial.getHarvestLevel());
-        this.setMaxDamage(durabillity);
-
+    public Hammer(String name, ItemTier tier, int durabillity) {
+        super(damage, attack_speed, tier, Collections.emptySet(), new Properties().addToolType(ToolType.PICKAXE, tier.getHarvestLevel()).maxDamage(durabillity));
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override
-    public boolean onBlockStartBreak(ItemStack itemStack, BlockPos pos, EntityPlayer player) {
+    public boolean onBlockStartBreak(ItemStack itemStack, BlockPos pos, PlayerEntity player) {
         if (player.isCreative()) {
             World world = player.world;
             RayTraceResult sideHit = this.rayTrace(world, player, false);
@@ -83,10 +87,10 @@ public class Hammer extends ItemTool {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack itemStack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
-        EntityPlayer player = (EntityPlayer)entityLiving;
-        RayTraceResult sideHit = this.rayTrace(worldIn, player, false);
-        EnumFacing facing = sideHit.sideHit;
+    public boolean onBlockDestroyed(ItemStack itemStack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
+        PlayerEntity player = (PlayerEntity)entityLiving;
+        RayTraceResult sideHit = rayTrace(worldIn, player, RayTraceContext.FluidMode.NONE);
+        EnumFacing facing = sideHit.getHitVec();
         EnumFacing facing1 = null;
         EnumFacing facing2 = null;
         EnumFacing.Axis[] var11 = EnumFacing.Axis.values();
@@ -132,10 +136,14 @@ public class Hammer extends ItemTool {
         }
 
         if ((double)state.getBlockHardness(worldIn, pos) != 0.0D) {
-            if (state.getBlock().isToolEffective("pickaxe", state)) {
-                itemStack.damageItem(1, entityLiving);
+            if (state.getBlock().isToolEffective(state, ToolType.PICKAXE)) {
+                itemStack.damageItem(1, entityLiving, (entity) -> {
+                    entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+                });
             } else {
-                itemStack.damageItem(3, entityLiving);
+                itemStack.damageItem(3, entityLiving, (entity) -> {
+                    entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+                });
             }
         }
 
@@ -143,8 +151,10 @@ public class Hammer extends ItemTool {
     }
 
     @Override
-    public boolean hitEntity(ItemStack itemStack, EntityLivingBase target, EntityLivingBase attacker) {
-        itemStack.damageItem(1, attacker);
+    public boolean hitEntity(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
+        itemStack.damageItem(1, attacker, (entity) -> {
+            entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+        });
         return true;
     }
 

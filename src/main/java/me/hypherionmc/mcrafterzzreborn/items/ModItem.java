@@ -12,8 +12,8 @@ import net.minecraft.item.Item;
 public class ModItem extends Item {
 
     public ModItem(String name) {
+        super(new Properties());
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-        ModItems.ITEMS.add(this);
+
     }
 }

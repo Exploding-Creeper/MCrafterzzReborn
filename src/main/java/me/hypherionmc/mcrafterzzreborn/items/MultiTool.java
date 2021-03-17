@@ -6,120 +6,118 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirt;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.Collections;
 import java.util.Iterator;
 
-public class MultiTool extends ItemTool {
+public class MultiTool extends ToolItem {
 
     public Item repairItem;
     public static float attack_speed = -2.8F;
     public static float base_damage = 3.0F;
 
-    public MultiTool(String name, ToolMaterial material, Item repairItem) {
-        super(base_damage, attack_speed, material, Collections.emptySet());
-        this.setHarvestLevel("pickaxe", material.getHarvestLevel());
-        this.setHarvestLevel("axe", material.getHarvestLevel());
-        this.setHarvestLevel("spade", material.getHarvestLevel());
-        this.setHarvestLevel("hoe", material.getHarvestLevel());
+    public MultiTool(String name, ItemTier material, Item repairItem) {
+        super(base_damage, attack_speed, material, Collections.emptySet(),
+                new Properties()
+                        .addToolType(ToolType.PICKAXE, material.getHarvestLevel())
+                        .addToolType(ToolType.AXE, material.getHarvestLevel())
+                        .addToolType(ToolType.SHOVEL, material.getHarvestLevel())
+                        .addToolType(ToolType.HOE, material.getHarvestLevel())
+                        );
+
         this.setHarvestLevel("sword", material.getHarvestLevel());
         this.repairItem = repairItem;
         this.setRegistryName(name);
-        this.setTranslationKey(name);
 
-        ModItems.ITEMS.add(this);
 
     }
 
-    protected void setBlock(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, IBlockState state) {
+    protected void setBlock(ItemStack stack, PlayerEntity player, World worldIn, BlockPos pos, BlockState state) {
         worldIn.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
         if (!worldIn.isRemote) {
             worldIn.setBlockState(pos, state, 11);
-            stack.damageItem(1, player);
+            stack.damageItem(1, player, (entity) -> {
+                entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+            });
         }
 
     }
 
     @Override
-    public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack stack = playerIn.getHeldItem(hand);
+    public ActionResultType onItemUse(ItemUseContext context) {
+        PlayerEntity playerIn = context.getPlayer();
+        ItemStack stack = playerIn.getHeldItem(context.getHand());
 
-        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack)) {
-            return EnumActionResult.FAIL;
+        if (!playerIn.canPlayerEdit(context.getPos().offset(context.getFace()), context.getFace(), stack)) {
+            return ActionResultType.FAIL;
         } else {
 
 
-            int hook = ForgeEventFactory.onHoeUse(stack, playerIn, worldIn, pos);
+            int hook = ForgeEventFactory.onHoeUse(context);
             if (hook != 0) {
-                return hook > 0 ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
+                return hook > 0 ? ActionResultType.SUCCESS : ActionResultType.FAIL;
             } else {
-                IBlockState iblockstate = worldIn.getBlockState(pos);
+                BlockState iblockstate = context.getWorld().getBlockState(context.getPos());
                 Block block = iblockstate.getBlock();
-                if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up())) {
+                if (context.getFace() != Direction.DOWN && context.getWorld().isAirBlock(context.getPos().up())) {
                     if (block == Blocks.GRASS || block == Blocks.GRASS_PATH) {
-                        this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
-                        return EnumActionResult.SUCCESS;
+                        this.setBlock(stack, playerIn, context.getWorld(), context.getPos(), Blocks.FARMLAND.getDefaultState());
+                        return ActionResultType.SUCCESS;
                     }
 
                     if (block == Blocks.DIRT) {
-                        switch((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT)) {
-                            case DIRT:
-                                this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
-                                return EnumActionResult.SUCCESS;
-                            case COARSE_DIRT:
-                                this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
-                                return EnumActionResult.SUCCESS;
-                        }
+                        this.setBlock(stack, playerIn, context.getWorld(), context.getPos(), Blocks.FARMLAND.getDefaultState());
+                        return ActionResultType.SUCCESS;
+
+                    } else if (block == Blocks.COARSE_DIRT) {
+                        this.setBlock(stack, playerIn, context.getWorld(), context.getPos(), Blocks.DIRT.getDefaultState());
+                        return ActionResultType.SUCCESS;
                     }
                 }
 
-                return EnumActionResult.PASS;
+                return ActionResultType.PASS;
             }
         }
     }
 
     @Override
-    public float getDestroySpeed(ItemStack stack, IBlockState state) {
-        Iterator var3 = this.getToolClasses(stack).iterator();
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        Iterator var3 = this.getToolTypes(stack).iterator();
 
-        String type;
+        ToolType type;
         do {
             if (!var3.hasNext()) {
-                if (state.getBlock() == Blocks.WEB) {
+                if (state.getBlock() == Blocks.COBWEB) {
                     return this.efficiency * 5.0F;
                 }
 
                 return this.efficiency;
             }
 
-            type = (String)var3.next();
-        } while(!state.getBlock().isToolEffective(type, state));
+            type = (ToolType) var3.next();
+        } while(!state.getBlock().isToolEffective(state, type));
 
         return this.efficiency;
     }
 
     @Override
-    public boolean canHarvestBlock(IBlockState state, ItemStack stack) {
+    public boolean canHarvestBlock(BlockState state) {
         return state.getMaterial() != Material.AIR && state.getMaterial() != Material.BARRIER;
     }
 
@@ -129,8 +127,10 @@ public class MultiTool extends ItemTool {
     }
 
     @Override
-    public boolean hitEntity(ItemStack itemStack, EntityLivingBase target, EntityLivingBase attacker) {
-        itemStack.damageItem(1, attacker);
+    public boolean hitEntity(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
+        itemStack.damageItem(1, attacker, (entity) -> {
+            entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+        });
         return true;
     }
 }

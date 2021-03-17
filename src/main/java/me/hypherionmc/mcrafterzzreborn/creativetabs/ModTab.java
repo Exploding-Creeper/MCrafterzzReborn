@@ -6,13 +6,11 @@
 
 package me.hypherionmc.mcrafterzzreborn.creativetabs;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import me.hypherionmc.mcrafterzzreborn.items.ModItem;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class ModTab extends CreativeTabs {
+public class ModTab extends ItemGroup {
 
     public ModTab(String label) {
         super(label);
