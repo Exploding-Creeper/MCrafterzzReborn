@@ -9,12 +9,16 @@ package me.hypherionmc.mcrafterzzreborn.machines.portable;
 import me.hypherionmc.mcrafterzzreborn.gui.containers.ContainerPortableFurnace;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
 import net.minecraft.block.Block;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.container.FurnaceFuelSlot;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -198,19 +202,19 @@ public class PortableFurnaceMachine implements IInventory {
     {
         this.furnaceItemStacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
         ItemStackHelper.loadAllItems(compound, this.furnaceItemStacks);
-        this.furnaceBurnTime = compound.getInteger("BurnTime");
-        this.cookTime = compound.getInteger("CookTime");
-        this.totalCookTime = compound.getInteger("CookTimeTotal");
+        this.furnaceBurnTime = compound.getInt("BurnTime");
+        this.cookTime = compound.getInt("CookTime");
+        this.totalCookTime = compound.getInt("CookTimeTotal");
         this.currentItemBurnTime = getItemBurningTime(this.furnaceItemStacks.get(1));
-        this.setMachineID(compound.getInteger("FurnaceID"));
+        this.setMachineID(compound.getInt("FurnaceID"));
     }
 
     public CompoundNBT writeToNBT(CompoundNBT compound)
     {
-        compound.setInteger("BurnTime", (short)this.furnaceBurnTime);
-        compound.setInteger("CookTime", (short)this.cookTime);
-        compound.setInteger("CookTimeTotal", (short)this.totalCookTime);
-        compound.setInteger("FurnaceID", this.machineID);
+        compound.putInt("BurnTime", (short)this.furnaceBurnTime);
+        compound.putInt("CookTime", (short)this.cookTime);
+        compound.putInt("CookTimeTotal", (short)this.totalCookTime);
+        compound.putInt("FurnaceID", this.machineID);
         ItemStackHelper.saveAllItems(compound, this.furnaceItemStacks);
         return compound;
     }
@@ -395,13 +399,13 @@ public class PortableFurnaceMachine implements IInventory {
                     {
                         return 2400;
                     }
-                    else if (item instanceof ItemDoor && item != Items.IRON_DOOR)
+                    else if (item instanceof DoorBlock && item != Items.IRON_DOOR)
                     {
                         return 200;
                     }
                     else
                     {
-                        return item instanceof ItemBoat ? 400 : 0;
+                        return item instanceof BoatItem ? 400 : 0;
                     }
                 }
                 else
@@ -435,7 +439,7 @@ public class PortableFurnaceMachine implements IInventory {
         else
         {
             ItemStack itemstack = this.furnaceItemStacks.get(1);
-            return isItemFuel(stack) || SlotFurnaceFuel.isBucket(stack) && itemstack.getItem() != Items.BUCKET;
+            return isItemFuel(stack) || FurnaceFuelSlot.isBucket(stack) && itemstack.getItem() != Items.BUCKET;
         }
     }
 
@@ -484,8 +488,8 @@ public class PortableFurnaceMachine implements IInventory {
         this.furnaceItemStacks.clear();
     }
 
-    public ContainerPortableFurnace createContainer(InventoryPlayer playerInv) {
-        return new ContainerPortableFurnace(playerInv, this);
+    public ContainerPortableFurnace createContainer(PlayerInventory playerInv) {
+        return new ContainerPortableFurnace(15, playerInv);
     }
 
     public NonNullList<ItemStack> getFurnaceItemStacks() {

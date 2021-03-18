@@ -6,10 +6,7 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTier;
+import net.minecraft.item.*;
 
 public class Hoe extends HoeItem {
 
@@ -17,10 +14,9 @@ public class Hoe extends HoeItem {
 
     public Item repairItem;
 
-    public Hoe(String name, ItemTier material, Item repairItem) {
-        super(material, (int) material.getAttackDamage(), 1.0f, new Properties());
+    public Hoe(IItemTier material, Item repairItem, ItemGroup group) {
+        super(material, (int) material.getAttackDamage(), 1.0f, new Properties().group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
     }
 

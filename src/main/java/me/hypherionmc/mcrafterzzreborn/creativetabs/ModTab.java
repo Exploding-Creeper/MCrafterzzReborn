@@ -18,6 +18,6 @@ public class ModTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(ModItems.bronze_ingot);
+        return new ItemStack(ModItems.bronze_ingot.get());
     }
 }

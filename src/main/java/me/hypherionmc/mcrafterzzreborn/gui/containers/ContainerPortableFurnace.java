@@ -6,24 +6,19 @@
 
 package me.hypherionmc.mcrafterzzreborn.gui.containers;
 
-import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
-import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import net.minecraft.client.gui.screen.inventory.FurnaceScreen;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.IContainerListener;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.datafix.fixes.FurnaceRecipes;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.inventory.container.AbstractFurnaceContainer;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.RecipeBookCategory;
 
-import javax.annotation.Nonnull;
+public class ContainerPortableFurnace extends AbstractFurnaceContainer {
 
-public class ContainerPortableFurnace extends Container {
 
-    private final PortableFurnaceMachine tileFurnace;
+    public ContainerPortableFurnace(int id, PlayerInventory playerInventory) {
+        super("", IRecipeType.SMELTING, RecipeBookCategory.FURNACE, id, playerInventory);
+    }
+
+    /*private final PortableFurnaceMachine tileFurnace;
     private int cookTime;
     private int totalCookTime;
     private int furnaceBurnTime;
@@ -32,11 +27,11 @@ public class ContainerPortableFurnace extends Container {
     public ContainerPortableFurnace(PlayerInventory playerInventory, PortableFurnaceMachine furnaceInventory)
     {
         super();
-        FurnaceScreen
+
         this.tileFurnace = furnaceInventory;
         this.addSlot(new Slot(furnaceInventory, 0, 56, 17));
-        this.addSlot(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
-        this.addSlot(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
+        this.addSlot(new FurnaceFuelSlot(furnaceInventory, 1, 56, 53));
+        this.addSlot(new FurnaceResultSlot(playerInventory.player, furnaceInventory, 2, 116, 35));
 
         for (int i = 0; i < 3; ++i)
         {
@@ -187,5 +182,5 @@ public class ContainerPortableFurnace extends Container {
         }
     }
 
-
+*/
 }

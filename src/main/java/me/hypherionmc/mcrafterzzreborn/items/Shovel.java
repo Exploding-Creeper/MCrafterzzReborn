@@ -6,19 +6,15 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTier;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 
 public class Shovel extends ShovelItem {
 
     public Item repairItem;
 
-    public Shovel(String name, ItemTier material, Item repairItem) {
-        super(material, material.getAttackDamage(), 1f, new Properties());
+    public Shovel(IItemTier material, Item repairItem, ItemGroup group) {
+        super(material, material.getAttackDamage(), 1f, new Properties().group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
     }
 

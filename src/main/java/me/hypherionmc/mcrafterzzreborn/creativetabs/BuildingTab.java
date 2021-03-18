@@ -19,6 +19,6 @@ public class BuildingTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModBlocks.colour_changing_glass));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.colour_changing_glass.get()));
     }
 }

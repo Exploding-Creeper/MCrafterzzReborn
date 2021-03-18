@@ -6,87 +6,63 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.IItemPropertyGetter;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemShield;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.translation.I18n;
-import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import javax.annotation.Nullable;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public class Shield extends ShieldItem {
 
     public String name;
     public ItemGroup tab;
 
-    public Shield(int durability, String name, ItemGroup tab) {
-        super(new Properties().maxDamage(durability));
+    public Shield(int durability, ItemGroup tab) {
+        super(new Properties().maxDamage(durability).group(tab));
         this.name = name;
-        this.tab = tab;
 
-        this.addPropertyOverride(new ResourceLocation("blocking"), new IItemPropertyGetter() {
+        /*this.addPropertyOverride(new ResourceLocation("blocking"), new IItemPropertyGetter() {
 
             @SideOnly(Side.CLIENT)
             public float apply(ItemStack stack, World worldIn, EntityLivingBase entityIn) {
                 return entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack ? 1.0F : 0.0F;
             }
 
-        });
-        this.setCreativeTab(tab);
-
+        });*/
 
     }
 
     @Override
-    public String getItemStackDisplayName(ItemStack stack) {
-        return I18n.translateToLocal("item." + this.name + ".name");
-    }
-
-    @Nullable
-    @Override
-    public CreativeTabs getCreativeTab() {
-        return this.tab;
-    }
-
-    @SubscribeEvent
-    public void attackEvent(LivingAttackEvent e) {
-        float damage = e.getAmount();
-        if (e.getEntityLiving() instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer)e.getEntityLiving();
+    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        float damage = stack.getDamage();
+        if (attacker instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) attacker;
             if (player.getActiveItemStack() != null) {
                 ItemStack activeItemStack = player.getActiveItemStack();
-                if (damage > 0.0F && activeItemStack != null && activeItemStack.getItem() instanceof ItemShield) {
+                if (damage > 0.0F && activeItemStack.getItem() instanceof ShieldItem) {
                     int i = 1 + MathHelper.floor(damage);
-                    activeItemStack.damageItem(i, player);
+
+                    stack.damageItem(i, player, (entity) -> {
+                        entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+                    });
+
                     if (activeItemStack.getCount() <= 0) {
-                        EnumHand enumhand = player.getActiveHand();
+                        Hand enumhand = player.getActiveHand();
                         ForgeEventFactory.onPlayerDestroyItem(player, activeItemStack, enumhand);
-                        if (enumhand == EnumHand.MAIN_HAND) {
-                            player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                        if (enumhand == Hand.MAIN_HAND) {
+                            player.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
                         } else {
-                            player.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                            player.setItemStackToSlot(EquipmentSlotType.OFFHAND, ItemStack.EMPTY);
                         }
 
                         activeItemStack = null;
-                        if (FMLCommonHandler.instance().getSide() == Side.CLIENT) {
+                        if (FMLEnvironment.dist.isClient()) {
                             player.playSound(SoundEvents.ITEM_SHIELD_BREAK, 0.8F, 0.8F + player.world.rand.nextFloat() * 0.4F);
                         }
                     }
@@ -94,5 +70,6 @@ public class Shield extends ShieldItem {
 
             }
         }
+        return true;
     }
 }

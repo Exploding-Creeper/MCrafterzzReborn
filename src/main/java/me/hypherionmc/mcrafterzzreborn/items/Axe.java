@@ -7,19 +7,15 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTier;
+import net.minecraft.item.*;
 
 public class Axe extends AxeItem {
 
     public Item repairItem;
 
-    public Axe(String name, ItemTier tier, Item repairItem) {
-        super(tier, tier.getAttackDamage(), -3.0F, new Properties());
+    public Axe(IItemTier tier, Item repairItem, ItemGroup group) {
+        super(tier, tier.getAttackDamage(), -3.0F, new Properties().group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
     }
 

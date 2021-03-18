@@ -7,12 +7,12 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import net.minecraft.item.FlintAndSteelItem;
+import net.minecraft.item.ItemGroup;
 
 public class FlintAndIngot extends FlintAndSteelItem {
 
-    public FlintAndIngot(String name, int durabillity) {
-        super(new Properties().maxDamage(durabillity));
-        this.setRegistryName(name);
+    public FlintAndIngot(int durabillity, ItemGroup group) {
+        super(new Properties().maxDamage(durabillity).group(group));
 
     }
 }

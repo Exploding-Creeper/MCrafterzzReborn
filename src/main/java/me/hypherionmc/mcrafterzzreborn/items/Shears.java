@@ -6,22 +6,19 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemShears;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShearsItem;
+import net.minecraftforge.common.ToolType;
 
 public class Shears extends ShearsItem {
 
     public Item repairItem;
 
-    public Shears(String name, int level, int durability, Item repairItem) {
-        super(new Properties().maxDamage(durability));
-        this.setHarvestLevel("shears", level);
+    public Shears(int level, int durability, Item repairItem, ItemGroup group) {
+        super(new Properties().maxDamage(durability).addToolType(ToolType.get("shears"), level).group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
     }
 

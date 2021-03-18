@@ -32,19 +32,17 @@ public class MultiTool extends ToolItem {
     public static float attack_speed = -2.8F;
     public static float base_damage = 3.0F;
 
-    public MultiTool(String name, ItemTier material, Item repairItem) {
+    public MultiTool(IItemTier material, Item repairItem, ItemGroup group) {
         super(base_damage, attack_speed, material, Collections.emptySet(),
                 new Properties()
-                        .addToolType(ToolType.PICKAXE, material.getHarvestLevel())
-                        .addToolType(ToolType.AXE, material.getHarvestLevel())
-                        .addToolType(ToolType.SHOVEL, material.getHarvestLevel())
-                        .addToolType(ToolType.HOE, material.getHarvestLevel())
-                        );
+                    .addToolType(ToolType.PICKAXE, material.getHarvestLevel())
+                    .addToolType(ToolType.AXE, material.getHarvestLevel())
+                    .addToolType(ToolType.SHOVEL, material.getHarvestLevel())
+                    .addToolType(ToolType.HOE, material.getHarvestLevel())
+                    .group(group).addToolType(ToolType.get("sword"), material.getHarvestLevel())
+        );
 
-        this.setHarvestLevel("sword", material.getHarvestLevel());
         this.repairItem = repairItem;
-        this.setRegistryName(name);
-
 
     }
 

@@ -6,114 +6,82 @@
 
 package me.hypherionmc.mcrafterzzreborn.blocks;
 
-import me.hypherionmc.mcrafterzzreborn.init.ModBlocks;
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import me.hypherionmc.mcrafterzzreborn.init.ModTabs;
-import net.minecraft.block.BlockTorch;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockStateContainer;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.TorchBlock;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import org.apache.commons.lang3.BooleanUtils;
 
-public class TorchLever extends BlockTorch {
+public class TorchLever extends TorchBlock {
 
-    public static PropertyBool POWERED = PropertyBool.create("powered");
+    public static BooleanProperty POWERED = BooleanProperty.create("powered");
 
     public TorchLever(String name) {
+        super(Properties.create(Material.MISCELLANEOUS), ParticleTypes.FLAME);
         this.setRegistryName(name);
-        this.setTranslationKey(name);
-        this.setCreativeTab(ModTabs.creativeTab);
-        this.setDefaultState(this.getDefaultState().withProperty(POWERED, false));
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
-
+        this.setDefaultState(this.getDefaultState().with(POWERED, false));
+        ModItems.ITEMS.register(name, () -> new BlockItem(this, new Item.Properties().group(ModTabs.creativeTabTools)));
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote) {
-            state = state.cycleProperty(POWERED);
+            state = state.func_235896_a_(POWERED);
             worldIn.setBlockState(pos, state, 3);
-            float f = (Boolean) state.getValue(POWERED) ? 0.6F : 0.5F;
-            worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.BLOCKS, 0.3F, f);
-            worldIn.notifyNeighborsOfStateChange(pos, this, false);
-            return true;
+            float f = (Boolean) state.get(POWERED) ? 0.6F : 0.5F;
+            worldIn.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.BLOCKS, 0.3F, f);
+            worldIn.notifyNeighborsOfStateChange(pos, this);
+            return ActionResultType.SUCCESS;
         }
+        return ActionResultType.SUCCESS;
+    }
+
+    @Override
+    public boolean canProvidePower(BlockState state) {
         return true;
     }
 
     @Override
-    public boolean canProvidePower(IBlockState state) {
-        return true;
+    public int getWeakPower(BlockState blockState, IBlockReader blockAccess, BlockPos pos, Direction side) {
+        return blockState.get(POWERED) ? 15 : 0;
     }
 
     @Override
-    public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        return blockState.getValue(POWERED) ? 15 : 0;
+    public int getStrongPower(BlockState blockState, IBlockReader blockAccess, BlockPos pos, Direction side) {
+        return blockState.get(POWERED) ? 15 : 0;
     }
 
     @Override
-    public int getStrongPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        if (!blockState.getValue(POWERED))
+    public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity player, boolean willHarvest, FluidState fluid) {
+        if (state.get(POWERED))
         {
-            return 0;
-        }
-        else
-        {
-            return 15;
-        }
-    }
-
-    @Override
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-        if (state.getValue(POWERED))
-        {
-            worldIn.notifyNeighborsOfStateChange(pos, this, false);
+            world.notifyNeighborsOfStateChange(pos, this);
         }
 
-        super.breakBlock(worldIn, pos, state);
+        return super.removedByPlayer(state, world, pos, player, willHarvest, fluid);
     }
 
     @Override
-    protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[] {FACING, POWERED});
+    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+        super.fillStateContainer(builder);
+        builder.add(POWERED);
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        int powered = state.getValue(POWERED) ? 1 : 0;
-        EnumFacing facing = state.getValue(FACING);
-
-        return (int)powered * EnumFacing.values().length + facing.ordinal();
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        Boolean powered = BooleanUtils.toBoolean((int) (meta / EnumFacing.values().length) % 2);
-        EnumFacing facing = EnumFacing.values()[meta % EnumFacing.values().length];
-
-        if (facing == EnumFacing.DOWN) {
-            return this.getDefaultState().withProperty(POWERED, powered);
-        } else {
-            return this.getDefaultState().withProperty(FACING, facing).withProperty(POWERED, powered);
-        }
-    }
-
-    @Override
-    public int getLightValue(IBlockState state) {
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
         return 14;
     }
 }

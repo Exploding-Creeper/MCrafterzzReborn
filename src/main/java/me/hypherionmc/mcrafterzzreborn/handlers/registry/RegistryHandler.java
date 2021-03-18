@@ -79,7 +79,7 @@ public class RegistryHandler {
     }
 
     public static void registerEventHandlers() {
-        MinecraftForge.EVENT_BUS.register(new Shield(0, "", ModTabs.creativeTab));
+        MinecraftForge.EVENT_BUS.register(ITEMS.register("", () -> new Shield(0, ModTabs.creativeTab)););
         MinecraftForge.EVENT_BUS.register(new ServerTickHandler());
     }
 

@@ -19,6 +19,6 @@ public class WIPTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModBlocks.block_of_death));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.block_of_death.get()));
     }
 }

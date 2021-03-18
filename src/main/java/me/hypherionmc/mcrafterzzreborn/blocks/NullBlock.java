@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021. MIT License License
+ * Copyright (c) 2021. MIT License
  *
  * Coded by HypherionMC based on code originally created by MCrafterzz. Code used with written permission
  */
@@ -8,25 +8,15 @@ package me.hypherionmc.mcrafterzzreborn.blocks;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 
-public class GlowingAir extends Block {
+public class NullBlock extends Block {
 
-    public GlowingAir(String name, Material material, ItemGroup group, float hardness) {
-        super(Properties.create(material).hardnessAndResistance(hardness));
+    public NullBlock(String name, ItemGroup group, float hard) {
+        super(Properties.create(Material.BARRIER).hardnessAndResistance(hard));
         ModItems.ITEMS.register(name, () -> new BlockItem(this, new Item.Properties().group(group)));
-
     }
-
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 15;
-    }
-
 }

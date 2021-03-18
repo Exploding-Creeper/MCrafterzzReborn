@@ -8,33 +8,24 @@ package me.hypherionmc.mcrafterzzreborn.items;
 
 import me.hypherionmc.mcrafterzzreborn.init.ModTabs;
 import me.hypherionmc.mcrafterzzreborn.world.storage.WorldSaveManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.IItemPropertyGetter;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
 
 public class PortableFurnace extends ModItem {
 
     public static final String MACHINE_TAG = "MACHINE_ID";
 
-    public PortableFurnace(String name) {
-        super(name);
-        this.setCreativeTab(ModTabs.creativeTabTools);
-        this.maxStackSize = 1;
+    public PortableFurnace() {
+        super(new Properties().maxStackSize(1), ModTabs.creativeTabTools);
 
-        this.addPropertyOverride(new ResourceLocation("variant"), new IItemPropertyGetter() {
+        /*this.addPropertyOverride(new ResourceLocation("variant"), new IItemPropertyGetter() {
             @Override
             public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
                 if (stack.hasTagCompound() && WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)) != null && WorldSaveManager.getInstance().getFurnaceMachine(stack.getTagCompound().getInteger(MACHINE_TAG)).isBurning()) {
@@ -43,16 +34,18 @@ public class PortableFurnace extends ModItem {
                     return 0;
                 }
             }
-        });
+        });*/
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-        if (!worldIn.isRemote) {
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+
+        if (worldIn.isRemote) {
             BlockPos pos = playerIn.getPosition();
-            playerIn.openGui("mmzreborn", 15, worldIn, pos.getX(), pos.getY(), pos.getZ());
+
         }
-        return ActionResult.newResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+
+        return new ActionResult<>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 
     @Override

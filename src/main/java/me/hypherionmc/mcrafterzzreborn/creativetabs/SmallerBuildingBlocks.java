@@ -19,6 +19,6 @@ public class SmallerBuildingBlocks extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModBlocks.acacia_log_stairs));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.acacia_log_stairs.get()));
     }
 }

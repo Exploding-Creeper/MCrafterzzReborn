@@ -19,6 +19,6 @@ public class MapMakingTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModBlocks.invisible_pressure_plate));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.invisible_pressure_plate.get()));
     }
 }

@@ -6,176 +6,154 @@
 
 package me.hypherionmc.mcrafterzzreborn.init;
 
+import me.hypherionmc.mcrafterzzreborn.ModConstants;
 import me.hypherionmc.mcrafterzzreborn.items.*;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.block.Blocks;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.EnumHelper;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.Items;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModItems {
 
-    public static final List<Item> ITEMS = new ArrayList<Item>();
-
-    public static Item.ToolMaterial opTool = EnumHelper.addToolMaterial("op", 4, 0, 100.0F, 96.0F, 100);
-    public static Item.ToolMaterial amethystTool = EnumHelper.addToolMaterial("amethyst", 4, 2000, 9.0F, 4.0F, 15);
-    public static Item.ToolMaterial jadeTool = EnumHelper.addToolMaterial("jade", 4, 2000, 9.0F, 4.0F, 15);
-    public static Item.ToolMaterial copperTool = EnumHelper.addToolMaterial("copper", 1, 170, 5.0F, 1.0F, 15);
-    public static Item.ToolMaterial bronzeTool = EnumHelper.addToolMaterial("bronze", 2, 250, 6.5F, 2.0F, 15);
-    
-    public static ItemArmor.ArmorMaterial amethystArmour = EnumHelper.addArmorMaterial("amethyst", "mmzreborn:amethyst", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-    public static ItemArmor.ArmorMaterial jadeArmour = EnumHelper.addArmorMaterial("jade", "mmzreborn:jade", 42, new int[]{4, 9, 5, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-    public static ItemArmor.ArmorMaterial copperArmour = EnumHelper.addArmorMaterial("copper", "mmzreborn:copper", 13, new int[]{2, 7, 4, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-    public static ItemArmor.ArmorMaterial bronzeArmour = EnumHelper.addArmorMaterial("bronze", "mmzreborn:bronze", 16, new int[]{3, 6, 4, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModConstants.MODID);
     
     /**
      * Items
      */
-    public static Item amethyst = new ModItem("amethyst").setCreativeTab(ModTabs.creativeTab);
-    public static Item jade = new ModItem("jade").setCreativeTab(ModTabs.creativeTab);
-    public static Item copper_ingot = new ModItem("copper_ingot").setCreativeTab(ModTabs.creativeTab);
-    public static Item tin_ingot = new ModItem("tin_ingot").setCreativeTab(ModTabs.creativeTab);
-    public static Item bronze_ingot = new ModItem("bronze_ingot").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern = new ModItem("wooden_pattern").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_bars = new ModItem("wooden_pattern_bars").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_button = new ModItem("wooden_pattern_button").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_pressure_plate = new ModItem("wooden_pattern_pressure_plate").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_trapdoor = new ModItem("wooden_pattern_trapdoor").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_wall = new ModItem("wooden_pattern_wall").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_fence = new ModItem("wooden_pattern_fence").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_fence_gate = new ModItem("wooden_pattern_fence_gate").setCreativeTab(ModTabs.creativeTab);
-    public static Item wooden_pattern_stairs = new ModItem("wooden_pattern_stairs").setCreativeTab(ModTabs.creativeTab);
-    public static Item portable_furnace = (new PortableFurnace("portable_furnace"));
+    public static RegistryObject<Item> amethyst = ITEMS.register("amethyst", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> jade = ITEMS.register("jade", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> copper_ingot = ITEMS.register("copper_ingot", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> tin_ingot = ITEMS.register("tin_ingot", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> bronze_ingot = ITEMS.register("bronze_ingot", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern = ITEMS.register("wooden_pattern", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_bars = ITEMS.register("wooden_pattern_bars", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_button = ITEMS.register("wooden_pattern_button", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_pressure_plate = ITEMS.register("wooden_pattern_pressure_plate", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_trapdoor = ITEMS.register("wooden_pattern_trapdoor", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_wall = ITEMS.register("wooden_pattern_wall", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_fence = ITEMS.register("wooden_pattern_fence", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_fence_gate = ITEMS.register("wooden_pattern_fence_gate", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> wooden_pattern_stairs = ITEMS.register("wooden_pattern_stairs", () -> new ModItem(ModTabs.creativeTab));
+    public static RegistryObject<Item> portable_furnace = ITEMS.register("portable_furnace", PortableFurnace::new);
 
     /**
      * Weapons
      */
-    public static Item copper_sword = new Sword("copper_sword", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_sword = new Sword("bronze_sword", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_sword = new Sword("jade_sword", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_sword = new Sword("amethyst_sword", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_sword = ITEMS.register("copper_sword", () -> new Sword(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_sword = ITEMS.register("bronze_sword", () -> new Sword(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_sword = ITEMS.register("jade_sword", () -> new Sword(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_sword = ITEMS.register("amethyst_sword", () -> new Sword(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
 
-    public static Item stone_bow = new Bow("stone_bow", 132, Item.getItemFromBlock(Blocks.STONE)).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item iron_bow = new Bow("iron_bow", 238, Items.IRON_INGOT).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item gold_bow = new Bow("gold_bow", 275, Items.GOLD_INGOT).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item diamond_bow = new Bow("diamond_bow", 1562, Items.DIAMOND).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_bow = new Bow("copper_bow", 170, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_bow = new Bow("bronze_bow", 250, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_bow = new Bow("jade_bow", 2000, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_bow = new Bow("amethyst_bow", 2000, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item op_bow = new Bow("op_bow", 0, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> stone_bow = ITEMS.register("stone_bow", () -> new Bow(132, Item.getItemFromBlock(Blocks.STONE), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", () -> new Bow(238, Items.IRON_INGOT, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> gold_bow = ITEMS.register("gold_bow", () -> new Bow(275, Items.GOLD_INGOT, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", () -> new Bow(1562, Items.DIAMOND, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_bow = ITEMS.register("copper_bow", () -> new Bow(170, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_bow = ITEMS.register("bronze_bow", () -> new Bow(250, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_bow = ITEMS.register("jade_bow", () -> new Bow(2000, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_bow = ITEMS.register("amethyst_bow", () -> new Bow(2000, ModItems.amethyst.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> op_bow = ITEMS.register("op_bow", () -> new Bow(0, ModItems.amethyst.get(), ModTabs.creativeTabTools));
 
     /**
      * Armor
      */
-    public static Item stone_shield = new Shield(132, "stone_shield", ModTabs.creativeTabTools);
-    public static Item iron_shield = new Shield(238, "iron_shield", ModTabs.creativeTabTools);
-    public static Item gold_shield = new Shield(275, "gold_shield", ModTabs.creativeTabTools);
-    public static Item diamond_shield = new Shield(1562, "diamond_shield", ModTabs.creativeTabTools);
-    public static Item copper_shield = new Shield(170, "copper_shield", ModTabs.creativeTabTools);
-    public static Item bronze_shield = new Shield(250, "bronze_shield", ModTabs.creativeTabTools);
-    public static Item jade_shield = new Shield(2000, "jade_shield", ModTabs.creativeTabTools);
-    public static Item amethyst_shield = new Shield(2000, "amethyst_shield", ModTabs.creativeTabTools);
+    public static RegistryObject<Item> stone_shield = ITEMS.register("stone_shield", () -> new Shield(132, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> iron_shield = ITEMS.register("iron_shield", () -> new Shield(238, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> gold_shield = ITEMS.register("gold_shield", () -> new Shield(275, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> diamond_shield = ITEMS.register("diamond_shield", () -> new Shield(1562, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_shield = ITEMS.register("copper_shield", () -> new Shield(170, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_shield = ITEMS.register("bronze_shield", () -> new Shield(250, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_shield = ITEMS.register("jade_shield", () -> new Shield(2000, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_shield = ITEMS.register("amethyst_shield", () -> new Shield(2000, ModTabs.creativeTabTools));
 
-    public static Item copper_helmet = new Armour("copper_helmet", copperArmour, 1, EntityEquipmentSlot.HEAD, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_chestplate = new Armour("copper_chestplate", copperArmour, 1, EntityEquipmentSlot.CHEST, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_leggings = new Armour("copper_leggings", copperArmour, 2, EntityEquipmentSlot.LEGS, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_boots = new Armour("copper_boots", copperArmour, 1, EntityEquipmentSlot.FEET, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_helmet = new Armour("bronze_helmet", bronzeArmour, 1, EntityEquipmentSlot.HEAD, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_chestplate = new Armour("bronze_chestplate", bronzeArmour, 1, EntityEquipmentSlot.CHEST, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_leggings = new Armour("bronze_leggings", bronzeArmour, 2, EntityEquipmentSlot.LEGS, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_boots = new Armour("bronze_boots", bronzeArmour, 1, EntityEquipmentSlot.FEET, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_helmet = new Armour("jade_helmet", jadeArmour, 1, EntityEquipmentSlot.HEAD, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_chestplate = new Armour("jade_chestplate", jadeArmour, 1, EntityEquipmentSlot.CHEST, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_leggings = new Armour("jade_leggings", jadeArmour, 2, EntityEquipmentSlot.LEGS, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_boots = new Armour("jade_boots", jadeArmour, 1, EntityEquipmentSlot.FEET, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_helmet = new Armour("amethyst_helmet", amethystArmour, 1, EntityEquipmentSlot.HEAD, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_chestplate = new Armour("amethyst_chestplate", amethystArmour, 1, EntityEquipmentSlot.CHEST, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_leggings = new Armour("amethyst_leggings", amethystArmour, 2, EntityEquipmentSlot.LEGS, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_boots = new Armour("amethyst_boots", amethystArmour, 1, EntityEquipmentSlot.FEET, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_helmet = ITEMS.register("copper_helmet", () -> new Armour(ArmorMaterials.COPPER, 1, EquipmentSlotType.HEAD, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_chestplate = ITEMS.register("copper_chestplate", () -> new Armour(ArmorMaterials.COPPER, 1, EquipmentSlotType.CHEST, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_leggings = ITEMS.register("copper_leggings", () -> new Armour(ArmorMaterials.COPPER, 2, EquipmentSlotType.LEGS, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_boots = ITEMS.register("copper_boots", () -> new Armour(ArmorMaterials.COPPER, 1, EquipmentSlotType.FEET, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_helmet = ITEMS.register("bronze_helmet", () -> new Armour(ArmorMaterials.BRONZE, 1, EquipmentSlotType.HEAD, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_chestplate = ITEMS.register("bronze_chestplate", () -> new Armour(ArmorMaterials.BRONZE, 1, EquipmentSlotType.CHEST, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_leggings = ITEMS.register("bronze_leggings", () -> new Armour(ArmorMaterials.BRONZE, 2, EquipmentSlotType.LEGS, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_boots = ITEMS.register("bronze_boots", () -> new Armour(ArmorMaterials.BRONZE, 1, EquipmentSlotType.FEET, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_helmet = ITEMS.register("jade_helmet", () -> new Armour(ArmorMaterials.JADE, 1, EquipmentSlotType.HEAD, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_chestplate = ITEMS.register("jade_chestplate", () -> new Armour(ArmorMaterials.JADE, 1, EquipmentSlotType.CHEST, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_leggings = ITEMS.register("jade_leggings", () -> new Armour(ArmorMaterials.JADE, 2, EquipmentSlotType.LEGS, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_boots = ITEMS.register("jade_boots", () -> new Armour(ArmorMaterials.JADE, 1, EquipmentSlotType.FEET, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_helmet = ITEMS.register("amethyst_helmet", () -> new Armour(ArmorMaterials.AMETHYST, 1, EquipmentSlotType.HEAD, ModItems.amethyst.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_chestplate = ITEMS.register("amethyst_chestplate", () -> new Armour(ArmorMaterials.AMETHYST, 1, EquipmentSlotType.CHEST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_leggings = ITEMS.register("amethyst_leggings", () -> new Armour(ArmorMaterials.AMETHYST, 2, EquipmentSlotType.LEGS, ModItems.amethyst.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_boots = ITEMS.register("amethyst_boots", () -> new Armour(ArmorMaterials.AMETHYST, 1, EquipmentSlotType.FEET, ModItems.amethyst.get(), ModTabs.creativeTabTools));
 
     /**
      * Tools
      */
-    public static Item copper_PickAxe = new PickAxe("copper_PickAxe", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_PickAxe = new PickAxe("bronze_PickAxe", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_PickAxe = new PickAxe("jade_PickAxe", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_PickAxe = new PickAxe("amethyst_PickAxe", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_PickAxe = ITEMS.register("copper_PickAxe", () -> new PickAxe(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_PickAxe = ITEMS.register("bronze_PickAxe", () -> new PickAxe(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_PickAxe = ITEMS.register("jade_PickAxe", () -> new PickAxe(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_PickAxe = ITEMS.register("amethyst_PickAxe", () -> new PickAxe(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
     
-    public static Item flint_and_wood = new FlintAndIngot("flint_and_wood", 59).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_stone = new FlintAndIngot("flint_and_stone", 132).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_gold = new FlintAndIngot("flint_and_gold", 275).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_diamond = new FlintAndIngot("flint_and_diamond", 1562).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_copper = new FlintAndIngot("flint_and_copper", 170).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_bronze = new FlintAndIngot("flint_and_bronze", 250).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_jade = new FlintAndIngot("flint_and_jade", 2000).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item flint_and_amethyst = new FlintAndIngot("flint_and_amethyst", 2000).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> flint_and_wood = ITEMS.register("flint_and_wood", () -> new FlintAndIngot(59, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_stone = ITEMS.register("flint_and_stone", () -> new FlintAndIngot(132, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_gold = ITEMS.register("flint_and_gold", () -> new FlintAndIngot(275, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_diamond = ITEMS.register("flint_and_diamond", () -> new FlintAndIngot(1562, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_copper = ITEMS.register("flint_and_copper", () -> new FlintAndIngot(170, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_bronze = ITEMS.register("flint_and_bronze", () -> new FlintAndIngot(250, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_jade = ITEMS.register("flint_and_jade", () -> new FlintAndIngot(2000, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> flint_and_amethyst = ITEMS.register("flint_and_amethyst", () -> new FlintAndIngot(2000, ModTabs.creativeTabTools));
     
-    public static Item copper_axe = new Axe("copper_axe", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_axe = new Axe("bronze_axe", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_axe = new Axe("jade_axe", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_axe = new Axe("amethyst_axe", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_axe = ITEMS.register("copper_axe", () -> new Axe(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_axe = ITEMS.register("bronze_axe", () -> new Axe(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_axe = ITEMS.register("jade_axe", () -> new Axe(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_axe = ITEMS.register("amethyst_axe", () -> new Axe(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
     
-    public static Item copper_shovel = new Shovel("copper_shovel", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_shovel = new Shovel("bronze_shovel", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_shovel = new Shovel("jade_shovel", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_shovel = new Shovel("amethyst_shovel", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_shovel = ITEMS.register("copper_shovel", () -> new Shovel(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_shovel = ITEMS.register("bronze_shovel", () -> new Shovel(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_shovel = ITEMS.register("jade_shovel", () -> new Shovel(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_shovel = ITEMS.register("amethyst_shovel", () -> new Shovel(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
     
-    public static Item copper_hoe = new Hoe("copper_hoe", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_hoe = new Hoe("bronze_hoe", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_hoe = new Hoe("jade_hoe", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_hoe = new Hoe("amethyst_hoe", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> copper_hoe = ITEMS.register("copper_hoe", () -> new Hoe(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_hoe = ITEMS.register("bronze_hoe", () -> new Hoe(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_hoe = ITEMS.register("jade_hoe", () -> new Hoe(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_hoe = ITEMS.register("amethyst_hoe", () -> new Hoe(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
     
-    public static Item diamond_multitool = new MultiTool("diamond_multitool", Item.ToolMaterial.DIAMOND, Items.DIAMOND).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_multitool = new MultiTool("copper_multitool", copperTool, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_multitool = new MultiTool("bronze_multitool", bronzeTool, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_multitool = new MultiTool("jade_multitool", jadeTool, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_multitool = new MultiTool("amethyst_multitool", amethystTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item op_multitool = new MultiTool("op_multitool", opTool, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> diamond_multitool = ITEMS.register("diamond_multitool", () -> new MultiTool(ItemTier.DIAMOND, Items.DIAMOND, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_multitool = ITEMS.register("copper_multitool", () -> new MultiTool(ItemTiers.COPPER, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_multitool = ITEMS.register("bronze_multitool", () -> new MultiTool(ItemTiers.BRONZE, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_multitool = ITEMS.register("jade_multitool", () -> new MultiTool(ItemTiers.JADE, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_multitool = ITEMS.register("amethyst_multitool", () -> new MultiTool(ItemTiers.AMETHYST, ModItems.amethyst.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> op_multitool = ITEMS.register("op_multitool", () -> new MultiTool(ItemTiers.OPTOOL, ModItems.amethyst.get(), ModTabs.creativeTabTools));
     
-    public static Item wooden_hammer = new Hammer("wooden_hammer", Item.ToolMaterial.WOOD, 59).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item stone_hammer = new Hammer("stone_hammer", Item.ToolMaterial.STONE, 132).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item iron_hammer = new Hammer("iron_hammer", Item.ToolMaterial.IRON, 238).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item gold_hammer = new Hammer("gold_hammer", Item.ToolMaterial.GOLD, 275).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item diamond_hammer = new Hammer("diamond_hammer", Item.ToolMaterial.DIAMOND, 1562).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_hammer = new Hammer("copper_hammer", copperTool, 170).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_hammer = new Hammer("bronze_hammer", bronzeTool, 250).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_hammer = new Hammer("jade_hammer", bronzeTool, 2000).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_hammer = new Hammer("amethyst_hammer", bronzeTool, 2000).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> wooden_hammer = ITEMS.register("wooden_hammer", () -> new Hammer(ItemTier.WOOD, 59, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> stone_hammer = ITEMS.register("stone_hammer", () -> new Hammer(ItemTier.STONE, 132, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> iron_hammer = ITEMS.register("iron_hammer", () -> new Hammer(ItemTier.IRON, 238, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> gold_hammer = ITEMS.register("gold_hammer", () -> new Hammer(ItemTier.GOLD, 275, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> diamond_hammer = ITEMS.register("diamond_hammer", () -> new Hammer(ItemTier.DIAMOND, 1562, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_hammer = ITEMS.register("copper_hammer", () -> new Hammer(ItemTiers.COPPER, 170, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_hammer = ITEMS.register("bronze_hammer", () -> new Hammer(ItemTiers.BRONZE, 250, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_hammer = ITEMS.register("jade_hammer", () -> new Hammer(ItemTiers.BRONZE, 2000, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_hammer = ITEMS.register("amethyst_hammer", () -> new Hammer(ItemTiers.BRONZE, 2000, ModTabs.creativeTabTools));
     
-    public static Item wooden_scythe = new Scythe("wooden_scythe", Item.ToolMaterial.WOOD, 59).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item stone_scythe = new Scythe("stone_scythe", Item.ToolMaterial.STONE, 132).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item iron_scythe = new Scythe("iron_scythe", Item.ToolMaterial.IRON, 238).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item gold_scythe = new Scythe("gold_scythe", Item.ToolMaterial.GOLD, 275).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item diamond_scythe = new Scythe("diamond_scythe", Item.ToolMaterial.DIAMOND, 1562).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_scythe = new Scythe("copper_scythe", copperTool, 170).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_scythe = new Scythe("bronze_scythe", bronzeTool, 250).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_scythe = new Scythe("jade_scythe", bronzeTool, 2000).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_scythe = new Scythe("amethyst_scythe", bronzeTool, 2000).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> wooden_scythe = ITEMS.register("wooden_scythe", () -> new Scythe(ItemTier.WOOD, 59, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> stone_scythe = ITEMS.register("stone_scythe", () -> new Scythe(ItemTier.STONE, 132, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> iron_scythe = ITEMS.register("iron_scythe", () -> new Scythe(ItemTier.IRON, 238, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> gold_scythe = ITEMS.register("gold_scythe", () -> new Scythe(ItemTier.GOLD, 275, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> diamond_scythe = ITEMS.register("diamond_scythe", () -> new Scythe(ItemTier.DIAMOND, 1562, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_scythe = ITEMS.register("copper_scythe", () -> new Scythe(ItemTiers.COPPER, 170, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_scythe = ITEMS.register("bronze_scythe", () -> new Scythe(ItemTiers.BRONZE, 250, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_scythe = ITEMS.register("jade_scythe", () -> new Scythe(ItemTiers.BRONZE, 2000, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_scythe = ITEMS.register("amethyst_scythe", () -> new Scythe(ItemTiers.BRONZE, 2000, ModTabs.creativeTabTools));
     
-    public static Item wooden_shears = new Shears("wooden_shears", 0, 59, Item.getItemFromBlock(Blocks.PLANKS)).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item stone_shears = new Shears("stone_shears", 0, 132, Item.getItemFromBlock(Blocks.STONE)).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item gold_shears = new Shears("gold_shears", 1, 275, Items.GOLD_INGOT).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item diamond_shears = new Shears("diamond_shears", 2, 1562, Items.DIAMOND).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item copper_shears = new Shears("copper_shears", 1, 170, ModItems.copper_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item bronze_shears = new Shears("bronze_shears", 1, 250, ModItems.bronze_ingot).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item jade_shears = new Shears("jade_shears", 3, 2000, ModItems.jade).setCreativeTab(ModTabs.creativeTabTools);
-    public static Item amethyst_shears = new Shears("amethyst_shears", 3, 2000, ModItems.amethyst).setCreativeTab(ModTabs.creativeTabTools);
+    public static RegistryObject<Item> wooden_shears = ITEMS.register("wooden_shears", () -> new Shears(0, 59, Item.getItemFromBlock(Blocks.ACACIA_PLANKS), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> stone_shears = ITEMS.register("stone_shears", () -> new Shears(0, 132, Item.getItemFromBlock(Blocks.STONE), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> gold_shears = ITEMS.register("gold_shears", () -> new Shears(1, 275, Items.GOLD_INGOT, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> diamond_shears = ITEMS.register("diamond_shears", () -> new Shears(2, 1562, Items.DIAMOND, ModTabs.creativeTabTools));
+    public static RegistryObject<Item> copper_shears = ITEMS.register("copper_shears", () -> new Shears(1, 170, ModItems.copper_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> bronze_shears = ITEMS.register("bronze_shears", () -> new Shears(1, 250, ModItems.bronze_ingot.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> jade_shears = ITEMS.register("jade_shears", () -> new Shears(3, 2000, ModItems.jade.get(), ModTabs.creativeTabTools));
+    public static RegistryObject<Item> amethyst_shears = ITEMS.register("amethyst_shears", () -> new Shears(3, 2000, ModItems.amethyst.get(), ModTabs.creativeTabTools));
 
-    public static void setupRepairItemForToolsAndArmour() {
-        copperTool.setRepairItem(new ItemStack(copper_ingot));
-        copperArmour.repairMaterial = new ItemStack(copper_ingot);
-        bronzeTool.setRepairItem(new ItemStack(bronze_ingot));
-        bronzeArmour.repairMaterial = new ItemStack(bronze_ingot);
-        jadeTool.setRepairItem(new ItemStack(jade));
-        jadeArmour.repairMaterial = new ItemStack(jade);
-        amethystTool.setRepairItem(new ItemStack(amethyst));
-        amethystArmour.repairMaterial = new ItemStack(amethyst);
-    }
+   
 }

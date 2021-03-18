@@ -8,16 +8,16 @@ package me.hypherionmc.mcrafterzzreborn.items;
 
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class Bow extends BowItem {
 
     public Item repairItem;
 
-    public Bow(String name, int durability, Item repairItem) {
-        super(new Properties().maxStackSize(1).maxDamage(durability));
+    public Bow(int durability, Item repairItem, ItemGroup group) {
+        super(new Properties().maxStackSize(1).maxDamage(durability).group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
         /*this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
 

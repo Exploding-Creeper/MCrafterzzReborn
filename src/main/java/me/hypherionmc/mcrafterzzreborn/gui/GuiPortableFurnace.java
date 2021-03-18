@@ -8,14 +8,27 @@ package me.hypherionmc.mcrafterzzreborn.gui;
 
 import me.hypherionmc.mcrafterzzreborn.gui.containers.ContainerPortableFurnace;
 import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
+import net.minecraft.client.gui.recipebook.AbstractRecipeBookGui;
+import net.minecraft.client.gui.recipebook.FurnaceRecipeGui;
 import net.minecraft.client.gui.screen.inventory.AbstractFurnaceScreen;
+import net.minecraft.client.gui.screen.inventory.FurnaceScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableFurnace> {
 
     private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
-    /** The player inventory bound to this GUI. */
+
+    public GuiPortableFurnace(ContainerPortableFurnace screenContainer, PlayerInventory playerInventory) {
+        super(screenContainer, new FurnaceRecipeGui(), playerInventory, new TranslationTextComponent(""), FURNACE_GUI_TEXTURES);
+    }
+
+
+    /*private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
+
     private final InventoryPlayer playerInventory;
     private final PortableFurnaceMachine tileFurnace;
 
@@ -26,9 +39,7 @@ public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableF
         this.tileFurnace = furnaceInv;
     }
 
-    /**
-     * Draws the screen and all the components in it.
-     */
+
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
         this.drawDefaultBackground();
@@ -36,9 +47,6 @@ public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableF
         this.renderHoveredToolTip(mouseX, mouseY);
     }
 
-    /**
-     * Draw the foreground layer for the GuiContainer (everything in front of the items)
-     */
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
         String s = this.tileFurnace.getDisplayName().getUnformattedText();
@@ -46,9 +54,6 @@ public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableF
         this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
     }
 
-    /**
-     * Draws the background layer of this container (behind the items).
-     */
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -84,5 +89,5 @@ public class GuiPortableFurnace extends AbstractFurnaceScreen<ContainerPortableF
         }
 
         return this.tileFurnace.getField(0) * pixels / i;
-    }
+    }*/
 }

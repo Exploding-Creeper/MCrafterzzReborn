@@ -19,6 +19,6 @@ public class WorldTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(Item.getItemFromBlock(ModBlocks.purple_tulip));
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.purple_tulip.get()));
     }
 }

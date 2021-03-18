@@ -18,6 +18,6 @@ public class ToolsTab extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(ModItems.amethyst_axe);
+        return new ItemStack(ModItems.amethyst_axe.get());
     }
 }

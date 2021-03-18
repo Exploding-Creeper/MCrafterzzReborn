@@ -6,24 +6,16 @@
 
 package me.hypherionmc.mcrafterzzreborn.items;
 
-import me.hypherionmc.mcrafterzzreborn.ModConstants;
-import me.hypherionmc.mcrafterzzreborn.init.ModItems;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 
 public class Sword extends SwordItem {
 
     public Item repairItem;
 
-    public Sword(String name, ToolMaterial material, Item repairItem) {
-        super(material);
-        this.setRegistryName(name);
-        this.setTranslationKey(name);
+    public Sword(IItemTier tier, Item repairItem, ItemGroup group) {
+        super(tier, 1, 1, new Properties().group(group));
         this.repairItem = repairItem;
 
-        ModItems.ITEMS.add(this);
     }
 
     @Override

@@ -10,6 +10,8 @@ import me.hypherionmc.mcrafterzzreborn.machines.portable.PortableFurnaceMachine;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 import net.minecraft.world.storage.WorldSavedData;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -17,6 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class WorldSaveManager extends WorldSavedData {
 
@@ -112,12 +115,12 @@ public class WorldSaveManager extends WorldSavedData {
         INSTANCE = null;
     }
 
-    public static void setInstance(World world) {
-        Storage storage = world.get();
-        WorldSaveManager result = (WorldSaveManager)storage.getOrLoadData(WorldSaveManager.class, "mmreborn");
+    public static void setInstance(ServerWorld world) {
+        DimensionSavedDataManager storage = world.getSavedData();
+        WorldSaveManager result = (WorldSaveManager)storage.getOrCreate(WorldSaveManager::getInstance, "mmreborn");
         if (result == null) {
             result = new WorldSaveManager("mmreborn");
-            storage.setData("mmreborn", result);
+            storage.set(result);
         }
 
         INSTANCE = result;

@@ -7,19 +7,15 @@
 package me.hypherionmc.mcrafterzzreborn.items;
 
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 
 public class Armour extends ArmorItem {
 
     public Item repairItem;
 
-    public Armour(String name, ArmorMaterial materialIn, int renderIndexIn, EquipmentSlotType equipmentSlotIn, Item repairItem) {
-        super(materialIn, equipmentSlotIn, new Properties());
+    public Armour(IArmorMaterial materialIn, int renderIndexIn, EquipmentSlotType equipmentSlotIn, Item repairItem, ItemGroup group) {
+        super(materialIn, equipmentSlotIn, new Properties().group(group));
         this.repairItem = repairItem;
-        this.setRegistryName(name);
 
     }
 
